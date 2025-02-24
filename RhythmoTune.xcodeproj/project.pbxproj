@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		ED08408F2D6C7C95007A46CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED0840702D6C7C92007A46CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED0840772D6C7C92007A46CC;
+			remoteInfo = RhythmoTune;
+		};
+		ED0840992D6C7C95007A46CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED0840702D6C7C92007A46CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED0840772D6C7C92007A46CC;
+			remoteInfo = RhythmoTune;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ED0840782D6C7C92007A46CC /* RhythmoTune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RhythmoTune.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED08408E2D6C7C95007A46CC /* RhythmoTuneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RhythmoTuneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED0840982D6C7C95007A46CC /* RhythmoTuneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RhythmoTuneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		ED0840A02D6C7C95007A46CC /* Exceptions for "RhythmoTune" folder in "RhythmoTune" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = ED0840772D6C7C92007A46CC /* RhythmoTune */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		ED08407A2D6C7C92007A46CC /* RhythmoTune */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				ED0840A02D6C7C95007A46CC /* Exceptions for "RhythmoTune" folder in "RhythmoTune" target */,
+			);
+			path = RhythmoTune;
+			sourceTree = "<group>";
+		};
+		ED0840912D6C7C95007A46CC /* RhythmoTuneTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = RhythmoTuneTests;
+			sourceTree = "<group>";
+		};
+		ED08409B2D6C7C95007A46CC /* RhythmoTuneUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = RhythmoTuneUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED0840752D6C7C92007A46CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED08408B2D6C7C95007A46CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED0840952D6C7C95007A46CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED08406F2D6C7C92007A46CC = {
+			isa = PBXGroup;
+			children = (
+				ED08407A2D6C7C92007A46CC /* RhythmoTune */,
+				ED0840912D6C7C95007A46CC /* RhythmoTuneTests */,
+				ED08409B2D6C7C95007A46CC /* RhythmoTuneUITests */,
+				ED0840792D6C7C92007A46CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED0840792D6C7C92007A46CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED0840782D6C7C92007A46CC /* RhythmoTune.app */,
+				ED08408E2D6C7C95007A46CC /* RhythmoTuneTests.xctest */,
+				ED0840982D6C7C95007A46CC /* RhythmoTuneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED0840772D6C7C92007A46CC /* RhythmoTune */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED0840A12D6C7C95007A46CC /* Build configuration list for PBXNativeTarget "RhythmoTune" */;
+			buildPhases = (
+				ED0840742D6C7C92007A46CC /* Sources */,
+				ED0840752D6C7C92007A46CC /* Frameworks */,
+				ED0840762D6C7C92007A46CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				ED08407A2D6C7C92007A46CC /* RhythmoTune */,
+			);
+			name = RhythmoTune;
+			packageProductDependencies = (
+			);
+			productName = RhythmoTune;
+			productReference = ED0840782D6C7C92007A46CC /* RhythmoTune.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ED08408D2D6C7C95007A46CC /* RhythmoTuneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED0840A62D6C7C95007A46CC /* Build configuration list for PBXNativeTarget "RhythmoTuneTests" */;
+			buildPhases = (
+				ED08408A2D6C7C95007A46CC /* Sources */,
+				ED08408B2D6C7C95007A46CC /* Frameworks */,
+				ED08408C2D6C7C95007A46CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED0840902D6C7C95007A46CC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				ED0840912D6C7C95007A46CC /* RhythmoTuneTests */,
+			);
+			name = RhythmoTuneTests;
+			packageProductDependencies = (
+			);
+			productName = RhythmoTuneTests;
+			productReference = ED08408E2D6C7C95007A46CC /* RhythmoTuneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ED0840972D6C7C95007A46CC /* RhythmoTuneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED0840A92D6C7C95007A46CC /* Build configuration list for PBXNativeTarget "RhythmoTuneUITests" */;
+			buildPhases = (
+				ED0840942D6C7C95007A46CC /* Sources */,
+				ED0840952D6C7C95007A46CC /* Frameworks */,
+				ED0840962D6C7C95007A46CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED08409A2D6C7C95007A46CC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				ED08409B2D6C7C95007A46CC /* RhythmoTuneUITests */,
+			);
+			name = RhythmoTuneUITests;
+			packageProductDependencies = (
+			);
+			productName = RhythmoTuneUITests;
+			productReference = ED0840982D6C7C95007A46CC /* RhythmoTuneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED0840702D6C7C92007A46CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1610;
+				LastUpgradeCheck = 1610;
+				TargetAttributes = {
+					ED0840772D6C7C92007A46CC = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					ED08408D2D6C7C95007A46CC = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = ED0840772D6C7C92007A46CC;
+					};
+					ED0840972D6C7C95007A46CC = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = ED0840772D6C7C92007A46CC;
+					};
+				};
+			};
+			buildConfigurationList = ED0840732D6C7C92007A46CC /* Build configuration list for PBXProject "RhythmoTune" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED08406F2D6C7C92007A46CC;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = ED0840792D6C7C92007A46CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED0840772D6C7C92007A46CC /* RhythmoTune */,
+				ED08408D2D6C7C95007A46CC /* RhythmoTuneTests */,
+				ED0840972D6C7C95007A46CC /* RhythmoTuneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED0840762D6C7C92007A46CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED08408C2D6C7C95007A46CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED0840962D6C7C95007A46CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED0840742D6C7C92007A46CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED08408A2D6C7C95007A46CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED0840942D6C7C95007A46CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED0840902D6C7C95007A46CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED0840772D6C7C92007A46CC /* RhythmoTune */;
+			targetProxy = ED08408F2D6C7C95007A46CC /* PBXContainerItemProxy */;
+		};
+		ED08409A2D6C7C95007A46CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED0840772D6C7C92007A46CC /* RhythmoTune */;
+			targetProxy = ED0840992D6C7C95007A46CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		ED0840A22D6C7C95007A46CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CF54KG74HD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RhythmoTune/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rajingangadharan.RhythmoTune;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED0840A32D6C7C95007A46CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CF54KG74HD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RhythmoTune/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rajingangadharan.RhythmoTune;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ED0840A42D6C7C95007A46CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ED0840A52D6C7C95007A46CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED0840A72D6C7C95007A46CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CF54KG74HD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rajingangadharan.RhythmoTuneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RhythmoTune.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RhythmoTune";
+			};
+			name = Debug;
+		};
+		ED0840A82D6C7C95007A46CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CF54KG74HD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rajingangadharan.RhythmoTuneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RhythmoTune.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RhythmoTune";
+			};
+			name = Release;
+		};
+		ED0840AA2D6C7C95007A46CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CF54KG74HD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rajingangadharan.RhythmoTuneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RhythmoTune;
+			};
+			name = Debug;
+		};
+		ED0840AB2D6C7C95007A46CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CF54KG74HD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rajingangadharan.RhythmoTuneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RhythmoTune;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED0840732D6C7C92007A46CC /* Build configuration list for PBXProject "RhythmoTune" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED0840A42D6C7C95007A46CC /* Debug */,
+				ED0840A52D6C7C95007A46CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED0840A12D6C7C95007A46CC /* Build configuration list for PBXNativeTarget "RhythmoTune" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED0840A22D6C7C95007A46CC /* Debug */,
+				ED0840A32D6C7C95007A46CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED0840A62D6C7C95007A46CC /* Build configuration list for PBXNativeTarget "RhythmoTuneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED0840A72D6C7C95007A46CC /* Debug */,
+				ED0840A82D6C7C95007A46CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED0840A92D6C7C95007A46CC /* Build configuration list for PBXNativeTarget "RhythmoTuneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED0840AA2D6C7C95007A46CC /* Debug */,
+				ED0840AB2D6C7C95007A46CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED0840702D6C7C92007A46CC /* Project object */;
+}
