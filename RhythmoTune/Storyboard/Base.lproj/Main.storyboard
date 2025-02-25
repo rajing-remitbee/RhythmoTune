@@ -1,24 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AR0-Q7-0RM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Black.ttf">
+            <string>Montserrat-Black</string>
+        </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="VGS-7d-LQA">
+            <objects>
+                <viewController id="pFz-hu-Ywd" customClass="SplashViewController" customModule="RhythmoTune" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KTv-f5-dhw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashOne.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ECE-R5-CjP">
+                                <rect key="frame" x="172.66666666666663" y="102.99999999999999" width="196.33333333333337" height="178.66666666666663"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashTwo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Ab6-WS-YXs">
+                                <rect key="frame" x="24" y="289.66666666666669" width="196.66666666666666" height="179"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashThree.png" translatesAutoresizingMaskIntoConstraints="NO" id="BQB-uH-JCg">
+                                <rect key="frame" x="172.66666666666663" y="476.66666666666669" width="196.33333333333337" height="178.66666666666669"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RhythmoTune" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbp-bq-wYe">
+                                <rect key="frame" x="0.0" y="744.66666666666663" width="393" height="31"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Black" family="Montserrat" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R73-93-45W">
+                                <rect key="frame" x="0.0" y="783.66666666666663" width="393" height="18.333333333333371"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eRl-eQ-zxR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ab6-WS-YXs" firstAttribute="top" secondItem="ECE-R5-CjP" secondAttribute="bottom" constant="8" id="7DN-AT-Xy5"/>
+                            <constraint firstItem="Ab6-WS-YXs" firstAttribute="width" secondItem="eRl-eQ-zxR" secondAttribute="width" multiplier="0.5" id="8yc-KW-0FH"/>
+                            <constraint firstItem="ECE-R5-CjP" firstAttribute="top" secondItem="eRl-eQ-zxR" secondAttribute="top" id="GCj-q0-DoX"/>
+                            <constraint firstItem="nbp-bq-wYe" firstAttribute="leading" secondItem="eRl-eQ-zxR" secondAttribute="leading" id="IlR-bd-Zlh"/>
+                            <constraint firstItem="eRl-eQ-zxR" firstAttribute="trailing" secondItem="nbp-bq-wYe" secondAttribute="trailing" id="LwX-xE-bbk"/>
+                            <constraint firstItem="eRl-eQ-zxR" firstAttribute="trailing" secondItem="BQB-uH-JCg" secondAttribute="trailing" constant="24" id="Lz6-1A-Oqn"/>
+                            <constraint firstItem="BQB-uH-JCg" firstAttribute="width" secondItem="eRl-eQ-zxR" secondAttribute="width" multiplier="0.5" id="RmZ-EO-jh2"/>
+                            <constraint firstItem="eRl-eQ-zxR" firstAttribute="trailing" secondItem="ECE-R5-CjP" secondAttribute="trailing" constant="24" id="S2y-aw-7pp"/>
+                            <constraint firstItem="R73-93-45W" firstAttribute="top" secondItem="nbp-bq-wYe" secondAttribute="bottom" constant="8" id="YhA-eL-6OO"/>
+                            <constraint firstItem="BQB-uH-JCg" firstAttribute="height" secondItem="eRl-eQ-zxR" secondAttribute="height" multiplier="0.25" id="bh7-e4-MNj"/>
+                            <constraint firstItem="Ab6-WS-YXs" firstAttribute="height" secondItem="eRl-eQ-zxR" secondAttribute="height" multiplier="0.25" id="fgI-Oi-dkM"/>
+                            <constraint firstItem="ECE-R5-CjP" firstAttribute="height" secondItem="eRl-eQ-zxR" secondAttribute="height" multiplier="0.25" id="g60-gq-Zib"/>
+                            <constraint firstItem="Ab6-WS-YXs" firstAttribute="leading" secondItem="eRl-eQ-zxR" secondAttribute="leading" constant="24" id="hm2-xg-blS"/>
+                            <constraint firstItem="BQB-uH-JCg" firstAttribute="top" secondItem="Ab6-WS-YXs" secondAttribute="bottom" constant="8" id="oYv-S1-y7l"/>
+                            <constraint firstItem="eRl-eQ-zxR" firstAttribute="bottom" secondItem="R73-93-45W" secondAttribute="bottom" constant="16" id="sCl-7d-7ST"/>
+                            <constraint firstItem="eRl-eQ-zxR" firstAttribute="trailing" secondItem="R73-93-45W" secondAttribute="trailing" id="thn-m6-wyE"/>
+                            <constraint firstItem="ECE-R5-CjP" firstAttribute="width" secondItem="eRl-eQ-zxR" secondAttribute="width" multiplier="0.5" id="vKk-JV-hs7"/>
+                            <constraint firstItem="R73-93-45W" firstAttribute="leading" secondItem="eRl-eQ-zxR" secondAttribute="leading" id="yNq-zL-erl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zzb-yJ-6Sy"/>
+                    <connections>
+                        <outlet property="splashOne" destination="ECE-R5-CjP" id="o9l-o6-4KG"/>
+                        <outlet property="splashThree" destination="BQB-uH-JCg" id="Sv9-4l-JVQ"/>
+                        <outlet property="splashTwo" destination="Ab6-WS-YXs" id="iHK-Na-BwN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="abS-Pi-6cy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-8.3969465648854964" y="-28.169014084507044"/>
+        </scene>
+        <!--Onboarding View Controller-->
+        <scene sceneID="SQC-Kc-a9f">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingViewController" id="rnT-wk-GUS" customClass="OnboardingViewController" customModule="RhythmoTune" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vkk-vO-qjG">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ADy-ic-ITH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7cQ-fG-RW8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-935" y="730"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RhythmoTune" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="976.33587786259534" y="-28.169014084507044"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="fwg-3b-alZ">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="RBW-2X-GNl" customClass="LoginViewController" customModule="RhythmoTune" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vg1-ca-Kt2">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="FYG-3k-j2O"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="88N-EE-TMY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50" y="730"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OCN-jD-Rva">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AR0-Q7-0RM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e1g-p1-9Oq">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pFz-hu-Ywd" kind="relationship" relationship="rootViewController" id="nfy-yp-eja"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="518-yH-Jbs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-935.1145038167939" y="-28.169014084507044"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SplashOne.jpg" width="576" height="576"/>
+        <image name="SplashThree.png" width="660" height="660"/>
+        <image name="SplashTwo.jpg" width="500" height="500"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
