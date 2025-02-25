@@ -11,6 +11,9 @@
         <array key="Montserrat-Black.ttf">
             <string>Montserrat-Black</string>
         </array>
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
         <array key="Montserrat-Regular.ttf">
             <string>Montserrat-Regular</string>
         </array>
@@ -87,8 +90,70 @@
                     <view key="view" contentMode="scaleToFill" id="Vkk-vO-qjG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" image="Onboarding.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wtH-hr-hbd">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="607.33333333333337"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWE-PZ-Sd4">
+                                <rect key="frame" x="16" y="768" width="361" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="D84-r0-GfO"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start Explore" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="crafted for every moment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahI-Ov-QEx">
+                                <rect key="frame" x="16" y="707" width="377" height="21"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Experience seamless music enjoyment," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyk-v8-N6o">
+                                <rect key="frame" x="16" y="686" width="377" height="21"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RhythmoTune" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNj-9R-T6w">
+                                <rect key="frame" x="16" y="649" width="369" height="37"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Black" family="Montserrat" pointSize="30"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dive Into Your" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naI-3G-5Yt">
+                                <rect key="frame" x="16" y="612" width="369" height="37"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Black" family="Montserrat" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ADy-ic-ITH"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ahI-Ov-QEx" firstAttribute="top" secondItem="qyk-v8-N6o" secondAttribute="bottom" id="4hg-k6-CXk"/>
+                            <constraint firstItem="wtH-hr-hbd" firstAttribute="height" secondItem="ADy-ic-ITH" secondAttribute="height" multiplier="0.8" id="7bC-iw-Sae"/>
+                            <constraint firstItem="qyk-v8-N6o" firstAttribute="top" secondItem="RNj-9R-T6w" secondAttribute="bottom" id="BsS-zr-agI"/>
+                            <constraint firstItem="RNj-9R-T6w" firstAttribute="leading" secondItem="ADy-ic-ITH" secondAttribute="leading" constant="16" id="OAX-Ne-Upd"/>
+                            <constraint firstItem="PWE-PZ-Sd4" firstAttribute="top" secondItem="ahI-Ov-QEx" secondAttribute="bottom" constant="40" id="OOy-VN-Ltr"/>
+                            <constraint firstItem="wtH-hr-hbd" firstAttribute="top" secondItem="Vkk-vO-qjG" secondAttribute="top" id="S49-aI-VkR"/>
+                            <constraint firstItem="ahI-Ov-QEx" firstAttribute="leading" secondItem="ADy-ic-ITH" secondAttribute="leading" constant="16" id="UxA-LO-Y4Q"/>
+                            <constraint firstItem="ADy-ic-ITH" firstAttribute="trailing" secondItem="naI-3G-5Yt" secondAttribute="trailing" constant="8" id="Vgp-QK-znU"/>
+                            <constraint firstItem="ADy-ic-ITH" firstAttribute="trailing" secondItem="PWE-PZ-Sd4" secondAttribute="trailing" constant="16" id="XSn-7i-AvQ"/>
+                            <constraint firstItem="ADy-ic-ITH" firstAttribute="trailing" secondItem="wtH-hr-hbd" secondAttribute="trailing" id="XTw-Lz-YP0"/>
+                            <constraint firstItem="ADy-ic-ITH" firstAttribute="trailing" secondItem="ahI-Ov-QEx" secondAttribute="trailing" id="YBm-8v-E5V"/>
+                            <constraint firstItem="qyk-v8-N6o" firstAttribute="trailing" secondItem="ADy-ic-ITH" secondAttribute="trailing" id="asg-xm-qnr"/>
+                            <constraint firstItem="naI-3G-5Yt" firstAttribute="leading" secondItem="ADy-ic-ITH" secondAttribute="leading" constant="16" id="cGJ-ve-tdk"/>
+                            <constraint firstItem="wtH-hr-hbd" firstAttribute="leading" secondItem="ADy-ic-ITH" secondAttribute="leading" id="fEt-tb-1cf"/>
+                            <constraint firstItem="ADy-ic-ITH" firstAttribute="bottom" secondItem="PWE-PZ-Sd4" secondAttribute="bottom" id="gPs-Bd-X5j"/>
+                            <constraint firstItem="RNj-9R-T6w" firstAttribute="top" secondItem="naI-3G-5Yt" secondAttribute="bottom" id="lOo-dI-MIa"/>
+                            <constraint firstItem="qyk-v8-N6o" firstAttribute="leading" secondItem="ADy-ic-ITH" secondAttribute="leading" constant="16" id="oLo-Yb-Kvb"/>
+                            <constraint firstItem="ADy-ic-ITH" firstAttribute="trailing" secondItem="RNj-9R-T6w" secondAttribute="trailing" constant="8" id="rYI-y5-q1q"/>
+                            <constraint firstItem="PWE-PZ-Sd4" firstAttribute="leading" secondItem="ADy-ic-ITH" secondAttribute="leading" constant="16" id="xTI-uE-uUS"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cQ-fG-RW8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -145,11 +210,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Onboarding.jpg" width="259.20001220703125" height="259.20001220703125"/>
         <image name="SplashOne.jpg" width="576" height="576"/>
         <image name="SplashThree.png" width="660" height="660"/>
         <image name="SplashTwo.jpg" width="500" height="500"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

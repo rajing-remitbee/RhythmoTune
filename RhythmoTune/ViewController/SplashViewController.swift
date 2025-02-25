@@ -17,7 +17,7 @@ class SplashViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let client = Client().setProject("67bd5300003544ce4f47")
+//        let client = Client().setProject("67bd5300003544ce4f47")
         
         setupImageView()
         
