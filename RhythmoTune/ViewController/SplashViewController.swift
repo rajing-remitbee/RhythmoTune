@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Appwrite
 
 class SplashViewController: ViewController {
     
@@ -16,8 +15,6 @@ class SplashViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let client = Client().setProject("67bd5300003544ce4f47")
         
         setupImageView()
         
@@ -80,7 +77,6 @@ class SplashViewController: ViewController {
     //Check isFirstLaunch
     func isFirstLaunch() {
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchStatus") //Launched Before
-        
         if launchedBefore {
             // User has launched before, go to login screen
             self.navigateToLoginScreen()
