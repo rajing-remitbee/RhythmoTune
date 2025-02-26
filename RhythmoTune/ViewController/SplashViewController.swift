@@ -79,7 +79,7 @@ class SplashViewController: ViewController {
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchStatus") //Launched Before
         if launchedBefore {
             // User has launched before, go to login screen
-            self.navigateToLoginScreen()
+            self.navigateToSignupScreen()
         } else {
             // First time launch, go to onboarding screen
             UserDefaults.standard.set(true, forKey: "launchStatus")
@@ -100,6 +100,14 @@ class SplashViewController: ViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let onboardViewController = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
         self.navigationController?.pushViewController(onboardViewController, animated: true)
+        self.navigationController?.viewControllers.remove(at: 0)
+    }
+    
+    //Navigate to Signup Screen
+    private func navigateToSignupScreen() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let signupViewController = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignUpViewController
+        self.navigationController?.pushViewController(signupViewController, animated: true)
         self.navigationController?.viewControllers.remove(at: 0)
     }
 }
