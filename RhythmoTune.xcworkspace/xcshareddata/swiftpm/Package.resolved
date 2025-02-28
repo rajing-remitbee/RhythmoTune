@@ -1,5 +1,5 @@
 {
-  "originHash" : "b32cd2b3068b5e1b853d48245be465d6df4c2cf35c74ebfaf7af0be3d364c985",
+  "originHash" : "4b37bbeca5c420356ca81f5d4f82829536f1e3e5190d62e0055c5c734aba3421",
   "pins" : [
     {
       "identity" : "async-http-client",
@@ -11,12 +11,21 @@
       }
     },
     {
+      "identity" : "lottie-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-ios.git",
+      "state" : {
+        "revision" : "047aa81b77adcbf583a966dfef620d17650cc656",
+        "version" : "4.5.1"
+      }
+    },
+    {
       "identity" : "sdk-for-apple",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/appwrite/sdk-for-apple",
       "state" : {
-        "revision" : "51028eb04634adc34ab27cea3b0a58d1c4bc21bf",
-        "version" : "8.0.0"
+        "revision" : "c39030db9af1e2dd7b36f8df45f838c5f7dfb0da",
+        "version" : "5.0.0"
       }
     },
     {

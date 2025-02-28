@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Lottie
 
 class OnboardingViewController: ViewController {
 
+    @IBOutlet weak var onboardingLottie: LottieAnimationView!
+    
     @IBAction func onStartPress(_ sender: UIButton) {
         navigateToLoginScreen()
     }
@@ -17,6 +20,13 @@ class OnboardingViewController: ViewController {
         super.viewDidLoad()
         
         navigationItem.hidesBackButton = true
+        
+        //Configure Lottie
+        onboardingLottie.contentMode = .scaleAspectFit
+        onboardingLottie.loopMode = .loop
+        onboardingLottie.backgroundColor = .clear
+        onboardingLottie.play()
+        
     }
     
     //Navigate to Login Screen

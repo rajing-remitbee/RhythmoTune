@@ -1,0 +1,769 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		048FDC1DFF5E70ACC7BBB14CDAFA3BEC /* Pods-RhythmoTuneTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CAD47A3D761D64EF0D237A1651BF327 /* Pods-RhythmoTuneTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		262D445BC11C1189F51681D497452F6D /* Pods-RhythmoTune-RhythmoTuneUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AAB81F2C8D94E6380F209D7EC17854 /* Pods-RhythmoTune-RhythmoTuneUITests-dummy.m */; };
+		28B9220F24C90DF66BC8217E4F8BE0D4 /* Pods-RhythmoTune-RhythmoTuneUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45FD9F62BAD5E37BFB9B9B94311C1FC0 /* Pods-RhythmoTune-RhythmoTuneUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44CA401B4516446C4D984B193913D1A7 /* Pods-RhythmoTuneTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A511AA850B552A0285833EDE5CB63EC0 /* Pods-RhythmoTuneTests-dummy.m */; };
+		452DA63A5D56666772435E883B2587F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		47555A82AAB00CE6A90A51CADC89F1EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		5C050D1DCD094BD9D424E32300822C9C /* Pods-RhythmoTune-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A6BF4610530CF64DA5294C850F27B252 /* Pods-RhythmoTune-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8E416B6D0B8DF936E745034F239A4F83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		9BA2CEC7D328F4E36677152E855FF370 /* Pods-RhythmoTune-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF896D686787E878C852316DC7519090 /* Pods-RhythmoTune-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		28D20C11CF53D101CF603B62CE17A0BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1536C3D5386724360DF58987A1F29F65;
+			remoteInfo = "Pods-RhythmoTune";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		041E4FAC56F3D1DDE713790D5948BB12 /* Pods-RhythmoTune-RhythmoTuneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RhythmoTune-RhythmoTuneUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		19CECDF5472235320639D7F6FDC48DE2 /* Pods-RhythmoTune */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-RhythmoTune"; path = Pods_RhythmoTune.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F8B9E14F190988844355B9AA7FAA443 /* Pods-RhythmoTune-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RhythmoTune-acknowledgements.markdown"; sourceTree = "<group>"; };
+		22553C0902260ACF42E5B19B12716B11 /* Pods-RhythmoTune.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RhythmoTune.modulemap"; sourceTree = "<group>"; };
+		2B308C768343D821B51FD307693B171C /* Pods-RhythmoTune-RhythmoTuneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RhythmoTune-RhythmoTuneUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2C914C6E18ED7F63AD27F06DBBFADCA9 /* Pods-RhythmoTune.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RhythmoTune.debug.xcconfig"; sourceTree = "<group>"; };
+		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		45FD9F62BAD5E37BFB9B9B94311C1FC0 /* Pods-RhythmoTune-RhythmoTuneUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RhythmoTune-RhythmoTuneUITests-umbrella.h"; sourceTree = "<group>"; };
+		4C7C1486C76EE218D778E228628A8116 /* Pods-RhythmoTuneTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RhythmoTuneTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5733D92830EF2EC61D97AB1FFA5C402C /* Pods-RhythmoTuneTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-RhythmoTuneTests"; path = Pods_RhythmoTuneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58C3C0F4D9D80D4C8760D9ABDFD024ED /* Pods-RhythmoTune-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RhythmoTune-acknowledgements.plist"; sourceTree = "<group>"; };
+		6AB11CAD42B5C00D2BD6FFA0008FE3C3 /* Pods-RhythmoTune-RhythmoTuneUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-RhythmoTune-RhythmoTuneUITests"; path = Pods_RhythmoTune_RhythmoTuneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F459886EFA653ADC09C88FB77797B02 /* Pods-RhythmoTune-RhythmoTuneUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RhythmoTune-RhythmoTuneUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6F9A39AC49E237BE717863A18AF979F0 /* Pods-RhythmoTuneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RhythmoTuneTests.release.xcconfig"; sourceTree = "<group>"; };
+		71857771C8115BD78F398A700925AB9A /* Pods-RhythmoTune-RhythmoTuneUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RhythmoTune-RhythmoTuneUITests-Info.plist"; sourceTree = "<group>"; };
+		7AE742062B450095CA63E2F2EAA2CB44 /* Pods-RhythmoTuneTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RhythmoTuneTests.modulemap"; sourceTree = "<group>"; };
+		9CAD47A3D761D64EF0D237A1651BF327 /* Pods-RhythmoTuneTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RhythmoTuneTests-umbrella.h"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9EDB17EB7A0C25D868783B040472946E /* Pods-RhythmoTuneTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RhythmoTuneTests-Info.plist"; sourceTree = "<group>"; };
+		A511AA850B552A0285833EDE5CB63EC0 /* Pods-RhythmoTuneTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RhythmoTuneTests-dummy.m"; sourceTree = "<group>"; };
+		A6BF4610530CF64DA5294C850F27B252 /* Pods-RhythmoTune-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RhythmoTune-umbrella.h"; sourceTree = "<group>"; };
+		ACD44F7F2C2D469005D0A3EE9CCE037F /* Pods-RhythmoTune-RhythmoTuneUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RhythmoTune-RhythmoTuneUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		AECE5818EE5DC3914A0D6F77481BC72F /* Pods-RhythmoTune-RhythmoTuneUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RhythmoTune-RhythmoTuneUITests.modulemap"; sourceTree = "<group>"; };
+		CB7FC078B59AF5F5A86FF55C36B019EA /* Pods-RhythmoTuneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RhythmoTuneTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D244676E9A2A4AAE6DAB02F0FABC9146 /* Pods-RhythmoTuneTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RhythmoTuneTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DF896D686787E878C852316DC7519090 /* Pods-RhythmoTune-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RhythmoTune-dummy.m"; sourceTree = "<group>"; };
+		E3AAB81F2C8D94E6380F209D7EC17854 /* Pods-RhythmoTune-RhythmoTuneUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RhythmoTune-RhythmoTuneUITests-dummy.m"; sourceTree = "<group>"; };
+		F55B3F68E355623CB26D5E8045F4EC44 /* Pods-RhythmoTune.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RhythmoTune.release.xcconfig"; sourceTree = "<group>"; };
+		FC69F9450F9B0670843D9B9555E2D282 /* Pods-RhythmoTune-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RhythmoTune-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00ACC6E319D0D485DBDE0D8461D89DE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47555A82AAB00CE6A90A51CADC89F1EB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39216E72090D87C2075435DE840812F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				452DA63A5D56666772435E883B2587F2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA9FA2B4D9BB8155BFC5E79E80237C0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E416B6D0B8DF936E745034F239A4F83 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26E00ADE3CF268C01B35ECB276675728 /* Pods-RhythmoTuneTests */ = {
+			isa = PBXGroup;
+			children = (
+				7AE742062B450095CA63E2F2EAA2CB44 /* Pods-RhythmoTuneTests.modulemap */,
+				D244676E9A2A4AAE6DAB02F0FABC9146 /* Pods-RhythmoTuneTests-acknowledgements.markdown */,
+				4C7C1486C76EE218D778E228628A8116 /* Pods-RhythmoTuneTests-acknowledgements.plist */,
+				A511AA850B552A0285833EDE5CB63EC0 /* Pods-RhythmoTuneTests-dummy.m */,
+				9EDB17EB7A0C25D868783B040472946E /* Pods-RhythmoTuneTests-Info.plist */,
+				9CAD47A3D761D64EF0D237A1651BF327 /* Pods-RhythmoTuneTests-umbrella.h */,
+				CB7FC078B59AF5F5A86FF55C36B019EA /* Pods-RhythmoTuneTests.debug.xcconfig */,
+				6F9A39AC49E237BE717863A18AF979F0 /* Pods-RhythmoTuneTests.release.xcconfig */,
+			);
+			name = "Pods-RhythmoTuneTests";
+			path = "Target Support Files/Pods-RhythmoTuneTests";
+			sourceTree = "<group>";
+		};
+		3C95288EC21C080982F956192E9D4C6F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19CECDF5472235320639D7F6FDC48DE2 /* Pods-RhythmoTune */,
+				6AB11CAD42B5C00D2BD6FFA0008FE3C3 /* Pods-RhythmoTune-RhythmoTuneUITests */,
+				5733D92830EF2EC61D97AB1FFA5C402C /* Pods-RhythmoTuneTests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DEF996641C0675FBD9F7EE8ABB68892 /* Pods-RhythmoTune */ = {
+			isa = PBXGroup;
+			children = (
+				22553C0902260ACF42E5B19B12716B11 /* Pods-RhythmoTune.modulemap */,
+				1F8B9E14F190988844355B9AA7FAA443 /* Pods-RhythmoTune-acknowledgements.markdown */,
+				58C3C0F4D9D80D4C8760D9ABDFD024ED /* Pods-RhythmoTune-acknowledgements.plist */,
+				DF896D686787E878C852316DC7519090 /* Pods-RhythmoTune-dummy.m */,
+				FC69F9450F9B0670843D9B9555E2D282 /* Pods-RhythmoTune-Info.plist */,
+				A6BF4610530CF64DA5294C850F27B252 /* Pods-RhythmoTune-umbrella.h */,
+				2C914C6E18ED7F63AD27F06DBBFADCA9 /* Pods-RhythmoTune.debug.xcconfig */,
+				F55B3F68E355623CB26D5E8045F4EC44 /* Pods-RhythmoTune.release.xcconfig */,
+			);
+			name = "Pods-RhythmoTune";
+			path = "Target Support Files/Pods-RhythmoTune";
+			sourceTree = "<group>";
+		};
+		48D9027B227442B19B4A850E3596D860 /* Pods-RhythmoTune-RhythmoTuneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AECE5818EE5DC3914A0D6F77481BC72F /* Pods-RhythmoTune-RhythmoTuneUITests.modulemap */,
+				6F459886EFA653ADC09C88FB77797B02 /* Pods-RhythmoTune-RhythmoTuneUITests-acknowledgements.markdown */,
+				ACD44F7F2C2D469005D0A3EE9CCE037F /* Pods-RhythmoTune-RhythmoTuneUITests-acknowledgements.plist */,
+				E3AAB81F2C8D94E6380F209D7EC17854 /* Pods-RhythmoTune-RhythmoTuneUITests-dummy.m */,
+				71857771C8115BD78F398A700925AB9A /* Pods-RhythmoTune-RhythmoTuneUITests-Info.plist */,
+				45FD9F62BAD5E37BFB9B9B94311C1FC0 /* Pods-RhythmoTune-RhythmoTuneUITests-umbrella.h */,
+				041E4FAC56F3D1DDE713790D5948BB12 /* Pods-RhythmoTune-RhythmoTuneUITests.debug.xcconfig */,
+				2B308C768343D821B51FD307693B171C /* Pods-RhythmoTune-RhythmoTuneUITests.release.xcconfig */,
+			);
+			name = "Pods-RhythmoTune-RhythmoTuneUITests";
+			path = "Target Support Files/Pods-RhythmoTune-RhythmoTuneUITests";
+			sourceTree = "<group>";
+		};
+		B74AE6BB4985EAB0C74055695DCF4040 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DEF996641C0675FBD9F7EE8ABB68892 /* Pods-RhythmoTune */,
+				48D9027B227442B19B4A850E3596D860 /* Pods-RhythmoTune-RhythmoTuneUITests */,
+				26E00ADE3CF268C01B35ECB276675728 /* Pods-RhythmoTuneTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				3C95288EC21C080982F956192E9D4C6F /* Products */,
+				B74AE6BB4985EAB0C74055695DCF4040 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4801F62A6B08CD9B5410329F1A18FDE /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4801F62A6B08CD9B5410329F1A18FDE /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1C2EB8CFAF459B84118BB16D3526D57A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28B9220F24C90DF66BC8217E4F8BE0D4 /* Pods-RhythmoTune-RhythmoTuneUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A255EE26411208198D4373994487E60 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				048FDC1DFF5E70ACC7BBB14CDAFA3BEC /* Pods-RhythmoTuneTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B0C6B9A562309F6D6461D43991814C8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C050D1DCD094BD9D424E32300822C9C /* Pods-RhythmoTune-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1536C3D5386724360DF58987A1F29F65 /* Pods-RhythmoTune */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47D20864320B78A3AC8D730993774D94 /* Build configuration list for PBXNativeTarget "Pods-RhythmoTune" */;
+			buildPhases = (
+				9B0C6B9A562309F6D6461D43991814C8 /* Headers */,
+				74C216394FC578D5EAF5ADCBB0EBD41B /* Sources */,
+				FA9FA2B4D9BB8155BFC5E79E80237C0C /* Frameworks */,
+				5A7B4AD42054A8287416446FC4ABFC59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-RhythmoTune";
+			productName = Pods_RhythmoTune;
+			productReference = 19CECDF5472235320639D7F6FDC48DE2 /* Pods-RhythmoTune */;
+			productType = "com.apple.product-type.framework";
+		};
+		24F3A36FFDA610B935F801022BB55E3C /* Pods-RhythmoTuneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6FB4DC7E450943D55AFEF2758DEC74E /* Build configuration list for PBXNativeTarget "Pods-RhythmoTuneTests" */;
+			buildPhases = (
+				9A255EE26411208198D4373994487E60 /* Headers */,
+				81680817FA3CB09E18565B22721043CB /* Sources */,
+				00ACC6E319D0D485DBDE0D8461D89DE2 /* Frameworks */,
+				AF7196615D5B113D02A3055B98542085 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				412BB7F51524938E542CEF3B5D01C3F6 /* PBXTargetDependency */,
+			);
+			name = "Pods-RhythmoTuneTests";
+			productName = Pods_RhythmoTuneTests;
+			productReference = 5733D92830EF2EC61D97AB1FFA5C402C /* Pods-RhythmoTuneTests */;
+			productType = "com.apple.product-type.framework";
+		};
+		641A4626CCB4A4E6291DAC582DF4695B /* Pods-RhythmoTune-RhythmoTuneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5648127B30F7CDCBC789E1BB516B7A6B /* Build configuration list for PBXNativeTarget "Pods-RhythmoTune-RhythmoTuneUITests" */;
+			buildPhases = (
+				1C2EB8CFAF459B84118BB16D3526D57A /* Headers */,
+				F582C643CCF5F2C7918B70BEE9778853 /* Sources */,
+				39216E72090D87C2075435DE840812F6 /* Frameworks */,
+				0EF3DE1C17C14C40C50D8B7111727CF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-RhythmoTune-RhythmoTuneUITests";
+			productName = Pods_RhythmoTune_RhythmoTuneUITests;
+			productReference = 6AB11CAD42B5C00D2BD6FFA0008FE3C3 /* Pods-RhythmoTune-RhythmoTuneUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 3C95288EC21C080982F956192E9D4C6F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1536C3D5386724360DF58987A1F29F65 /* Pods-RhythmoTune */,
+				641A4626CCB4A4E6291DAC582DF4695B /* Pods-RhythmoTune-RhythmoTuneUITests */,
+				24F3A36FFDA610B935F801022BB55E3C /* Pods-RhythmoTuneTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0EF3DE1C17C14C40C50D8B7111727CF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A7B4AD42054A8287416446FC4ABFC59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF7196615D5B113D02A3055B98542085 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		74C216394FC578D5EAF5ADCBB0EBD41B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BA2CEC7D328F4E36677152E855FF370 /* Pods-RhythmoTune-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81680817FA3CB09E18565B22721043CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44CA401B4516446C4D984B193913D1A7 /* Pods-RhythmoTuneTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F582C643CCF5F2C7918B70BEE9778853 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				262D445BC11C1189F51681D497452F6D /* Pods-RhythmoTune-RhythmoTuneUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		412BB7F51524938E542CEF3B5D01C3F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-RhythmoTune";
+			target = 1536C3D5386724360DF58987A1F29F65 /* Pods-RhythmoTune */;
+			targetProxy = 28D20C11CF53D101CF603B62CE17A0BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0AC31E322B355910123FDCBDA3A4A854 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B308C768343D821B51FD307693B171C /* Pods-RhythmoTune-RhythmoTuneUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-RhythmoTune-RhythmoTuneUITests/Pods-RhythmoTune-RhythmoTuneUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RhythmoTune-RhythmoTuneUITests/Pods-RhythmoTune-RhythmoTuneUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		16C8B97DD7A77A6C49296114599BEF1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 041E4FAC56F3D1DDE713790D5948BB12 /* Pods-RhythmoTune-RhythmoTuneUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-RhythmoTune-RhythmoTuneUITests/Pods-RhythmoTune-RhythmoTuneUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RhythmoTune-RhythmoTuneUITests/Pods-RhythmoTune-RhythmoTuneUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		26488636C87E858811EBD178B6EAEBE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F55B3F68E355623CB26D5E8045F4EC44 /* Pods-RhythmoTune.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-RhythmoTune/Pods-RhythmoTune-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RhythmoTune/Pods-RhythmoTune.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		59E8734DA70715406493CA912F854277 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		5A49448602EC1B17D12ADB02D6EE73BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		8B7A42204B6C0127F201809F174FF5FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C914C6E18ED7F63AD27F06DBBFADCA9 /* Pods-RhythmoTune.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-RhythmoTune/Pods-RhythmoTune-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RhythmoTune/Pods-RhythmoTune.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9B9E0DB89B7BD12F59E28E59A6DEB680 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB7FC078B59AF5F5A86FF55C36B019EA /* Pods-RhythmoTuneTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-RhythmoTuneTests/Pods-RhythmoTuneTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RhythmoTuneTests/Pods-RhythmoTuneTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A5BDFFF9B51038660B6E1D6E3C59152E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F9A39AC49E237BE717863A18AF979F0 /* Pods-RhythmoTuneTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-RhythmoTuneTests/Pods-RhythmoTuneTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RhythmoTuneTests/Pods-RhythmoTuneTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		47D20864320B78A3AC8D730993774D94 /* Build configuration list for PBXNativeTarget "Pods-RhythmoTune" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B7A42204B6C0127F201809F174FF5FD /* Debug */,
+				26488636C87E858811EBD178B6EAEBE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59E8734DA70715406493CA912F854277 /* Debug */,
+				5A49448602EC1B17D12ADB02D6EE73BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5648127B30F7CDCBC789E1BB516B7A6B /* Build configuration list for PBXNativeTarget "Pods-RhythmoTune-RhythmoTuneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16C8B97DD7A77A6C49296114599BEF1D /* Debug */,
+				0AC31E322B355910123FDCBDA3A4A854 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6FB4DC7E450943D55AFEF2758DEC74E /* Build configuration list for PBXNativeTarget "Pods-RhythmoTuneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B9E0DB89B7BD12F59E28E59A6DEB680 /* Debug */,
+				A5BDFFF9B51038660B6E1D6E3C59152E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

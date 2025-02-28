@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EDE4598E2D6D8BA100076D8C /* Appwrite in Frameworks */ = {isa = PBXBuildFile; productRef = EDE4598D2D6D8BA100076D8C /* Appwrite */; };
+		44D476460B85ED3B3C0A7473 /* Pods_RhythmoTuneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7466EFA928FC06F4F2F115CC /* Pods_RhythmoTuneTests.framework */; };
+		50BE082860EB38892F6F5F51 /* Pods_RhythmoTune_RhythmoTuneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F75D48697A1927CA1F90142 /* Pods_RhythmoTune_RhythmoTuneUITests.framework */; };
+		6AF6B4C9DD38EBC34EC27118 /* Pods_RhythmoTune.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9CB72486EC7E3793017B0B /* Pods_RhythmoTune.framework */; };
+		EDFB0BF42D6F1A7500197AFD /* Appwrite in Frameworks */ = {isa = PBXBuildFile; productRef = EDFB0BF32D6F1A7500197AFD /* Appwrite */; };
+		EDFB0BFA2D6F1DA400197AFD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EDFB0BF92D6F1DA400197AFD /* Lottie */; };
+		EDFB0BFD2D6F2B5000197AFD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EDFB0BFC2D6F2B5000197AFD /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +33,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E4F10BEB3A4D7AB8D4B2E5C /* Pods-RhythmoTune-RhythmoTuneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmoTune-RhythmoTuneUITests.release.xcconfig"; path = "Target Support Files/Pods-RhythmoTune-RhythmoTuneUITests/Pods-RhythmoTune-RhythmoTuneUITests.release.xcconfig"; sourceTree = "<group>"; };
+		55BE92541CA0E7A82905A1E7 /* Pods-RhythmoTune-RhythmoTuneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmoTune-RhythmoTuneUITests.debug.xcconfig"; path = "Target Support Files/Pods-RhythmoTune-RhythmoTuneUITests/Pods-RhythmoTune-RhythmoTuneUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		72A9967C0F3ECBB1930FE5F4 /* Pods-RhythmoTune.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmoTune.debug.xcconfig"; path = "Target Support Files/Pods-RhythmoTune/Pods-RhythmoTune.debug.xcconfig"; sourceTree = "<group>"; };
+		7466EFA928FC06F4F2F115CC /* Pods_RhythmoTuneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RhythmoTuneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77DD633569A885D92C9E41F3 /* Pods-RhythmoTuneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmoTuneTests.release.xcconfig"; path = "Target Support Files/Pods-RhythmoTuneTests/Pods-RhythmoTuneTests.release.xcconfig"; sourceTree = "<group>"; };
+		7F75D48697A1927CA1F90142 /* Pods_RhythmoTune_RhythmoTuneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RhythmoTune_RhythmoTuneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A2DE0A50BD448CC49B6FC1F /* Pods-RhythmoTuneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmoTuneTests.debug.xcconfig"; path = "Target Support Files/Pods-RhythmoTuneTests/Pods-RhythmoTuneTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D4982F47D7FCF969EF5AB282 /* Pods-RhythmoTune.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RhythmoTune.release.xcconfig"; path = "Target Support Files/Pods-RhythmoTune/Pods-RhythmoTune.release.xcconfig"; sourceTree = "<group>"; };
+		EC9CB72486EC7E3793017B0B /* Pods_RhythmoTune.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RhythmoTune.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0840782D6C7C92007A46CC /* RhythmoTune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RhythmoTune.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED08408E2D6C7C95007A46CC /* RhythmoTuneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RhythmoTuneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0840982D6C7C95007A46CC /* RhythmoTuneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RhythmoTuneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +83,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDE4598E2D6D8BA100076D8C /* Appwrite in Frameworks */,
+				EDFB0BF42D6F1A7500197AFD /* Appwrite in Frameworks */,
+				6AF6B4C9DD38EBC34EC27118 /* Pods_RhythmoTune.framework in Frameworks */,
+				EDFB0BFA2D6F1DA400197AFD /* Lottie in Frameworks */,
+				EDFB0BFD2D6F2B5000197AFD /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44D476460B85ED3B3C0A7473 /* Pods_RhythmoTuneTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,12 +102,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50BE082860EB38892F6F5F51 /* Pods_RhythmoTune_RhythmoTuneUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B82A801EBE4A1C2924768AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72A9967C0F3ECBB1930FE5F4 /* Pods-RhythmoTune.debug.xcconfig */,
+				D4982F47D7FCF969EF5AB282 /* Pods-RhythmoTune.release.xcconfig */,
+				55BE92541CA0E7A82905A1E7 /* Pods-RhythmoTune-RhythmoTuneUITests.debug.xcconfig */,
+				4E4F10BEB3A4D7AB8D4B2E5C /* Pods-RhythmoTune-RhythmoTuneUITests.release.xcconfig */,
+				8A2DE0A50BD448CC49B6FC1F /* Pods-RhythmoTuneTests.debug.xcconfig */,
+				77DD633569A885D92C9E41F3 /* Pods-RhythmoTuneTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		21DB316605AACA66B4C20F83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC9CB72486EC7E3793017B0B /* Pods_RhythmoTune.framework */,
+				7F75D48697A1927CA1F90142 /* Pods_RhythmoTune_RhythmoTuneUITests.framework */,
+				7466EFA928FC06F4F2F115CC /* Pods_RhythmoTuneTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ED08406F2D6C7C92007A46CC = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +139,8 @@
 				ED0840912D6C7C95007A46CC /* RhythmoTuneTests */,
 				ED08409B2D6C7C95007A46CC /* RhythmoTuneUITests */,
 				ED0840792D6C7C92007A46CC /* Products */,
+				0B82A801EBE4A1C2924768AA /* Pods */,
+				21DB316605AACA66B4C20F83 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +161,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED0840A12D6C7C95007A46CC /* Build configuration list for PBXNativeTarget "RhythmoTune" */;
 			buildPhases = (
+				3FDB970BEB1B34ED23B475F1 /* [CP] Check Pods Manifest.lock */,
 				ED0840742D6C7C92007A46CC /* Sources */,
 				ED0840752D6C7C92007A46CC /* Frameworks */,
 				ED0840762D6C7C92007A46CC /* Resources */,
@@ -129,9 +174,6 @@
 				ED08407A2D6C7C92007A46CC /* RhythmoTune */,
 			);
 			name = RhythmoTune;
-			packageProductDependencies = (
-				EDE4598D2D6D8BA100076D8C /* Appwrite */,
-			);
 			productName = RhythmoTune;
 			productReference = ED0840782D6C7C92007A46CC /* RhythmoTune.app */;
 			productType = "com.apple.product-type.application";
@@ -140,6 +182,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED0840A62D6C7C95007A46CC /* Build configuration list for PBXNativeTarget "RhythmoTuneTests" */;
 			buildPhases = (
+				8A54B5C265063E8741F9CAC8 /* [CP] Check Pods Manifest.lock */,
 				ED08408A2D6C7C95007A46CC /* Sources */,
 				ED08408B2D6C7C95007A46CC /* Frameworks */,
 				ED08408C2D6C7C95007A46CC /* Resources */,
@@ -153,8 +196,6 @@
 				ED0840912D6C7C95007A46CC /* RhythmoTuneTests */,
 			);
 			name = RhythmoTuneTests;
-			packageProductDependencies = (
-			);
 			productName = RhythmoTuneTests;
 			productReference = ED08408E2D6C7C95007A46CC /* RhythmoTuneTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -163,6 +204,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED0840A92D6C7C95007A46CC /* Build configuration list for PBXNativeTarget "RhythmoTuneUITests" */;
 			buildPhases = (
+				207C8276EB2A304D3C21CFAE /* [CP] Check Pods Manifest.lock */,
 				ED0840942D6C7C95007A46CC /* Sources */,
 				ED0840952D6C7C95007A46CC /* Frameworks */,
 				ED0840962D6C7C95007A46CC /* Resources */,
@@ -176,8 +218,6 @@
 				ED08409B2D6C7C95007A46CC /* RhythmoTuneUITests */,
 			);
 			name = RhythmoTuneUITests;
-			packageProductDependencies = (
-			);
 			productName = RhythmoTuneUITests;
 			productReference = ED0840982D6C7C95007A46CC /* RhythmoTuneUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -215,7 +255,8 @@
 			mainGroup = ED08406F2D6C7C92007A46CC;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				EDE4598C2D6D8BA100076D8C /* XCRemoteSwiftPackageReference "sdk-for-apple" */,
+				EDFB0BF22D6F1A7500197AFD /* XCRemoteSwiftPackageReference "sdk-for-apple" */,
+				EDFB0BFB2D6F2B5000197AFD /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = ED0840792D6C7C92007A46CC /* Products */;
@@ -252,6 +293,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		207C8276EB2A304D3C21CFAE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RhythmoTune-RhythmoTuneUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FDB970BEB1B34ED23B475F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RhythmoTune-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A54B5C265063E8741F9CAC8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RhythmoTuneTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ED0840742D6C7C92007A46CC /* Sources */ = {
@@ -293,6 +403,7 @@
 /* Begin XCBuildConfiguration section */
 		ED0840A22D6C7C95007A46CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72A9967C0F3ECBB1930FE5F4 /* Pods-RhythmoTune.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,11 +412,14 @@
 				DEVELOPMENT_TEAM = CF54KG74HD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RhythmoTune/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RhythmoTune;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -321,6 +435,7 @@
 		};
 		ED0840A32D6C7C95007A46CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4982F47D7FCF969EF5AB282 /* Pods-RhythmoTune.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -329,11 +444,14 @@
 				DEVELOPMENT_TEAM = CF54KG74HD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RhythmoTune/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RhythmoTune;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -468,6 +586,7 @@
 		};
 		ED0840A72D6C7C95007A46CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A2DE0A50BD448CC49B6FC1F /* Pods-RhythmoTuneTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -487,6 +606,7 @@
 		};
 		ED0840A82D6C7C95007A46CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77DD633569A885D92C9E41F3 /* Pods-RhythmoTuneTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -506,6 +626,7 @@
 		};
 		ED0840AA2D6C7C95007A46CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55BE92541CA0E7A82905A1E7 /* Pods-RhythmoTune-RhythmoTuneUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -523,6 +644,7 @@
 		};
 		ED0840AB2D6C7C95007A46CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E4F10BEB3A4D7AB8D4B2E5C /* Pods-RhythmoTune-RhythmoTuneUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -580,21 +702,47 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EDE4598C2D6D8BA100076D8C /* XCRemoteSwiftPackageReference "sdk-for-apple" */ = {
+		EDFB0BF22D6F1A7500197AFD /* XCRemoteSwiftPackageReference "sdk-for-apple" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/appwrite/sdk-for-apple";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.0;
+				minimumVersion = 5.0.0;
+			};
+		};
+		EDFB0BF82D6F1DA400197AFD /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.1;
+			};
+		};
+		EDFB0BFB2D6F2B5000197AFD /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EDE4598D2D6D8BA100076D8C /* Appwrite */ = {
+		EDFB0BF32D6F1A7500197AFD /* Appwrite */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EDE4598C2D6D8BA100076D8C /* XCRemoteSwiftPackageReference "sdk-for-apple" */;
+			package = EDFB0BF22D6F1A7500197AFD /* XCRemoteSwiftPackageReference "sdk-for-apple" */;
 			productName = Appwrite;
+		};
+		EDFB0BF92D6F1DA400197AFD /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDFB0BF82D6F1DA400197AFD /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+		EDFB0BFC2D6F2B5000197AFD /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDFB0BFB2D6F2B5000197AFD /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

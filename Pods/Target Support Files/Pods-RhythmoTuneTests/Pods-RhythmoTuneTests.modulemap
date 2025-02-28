@@ -1,0 +1,6 @@
+framework module Pods_RhythmoTuneTests {
+  umbrella header "Pods-RhythmoTuneTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

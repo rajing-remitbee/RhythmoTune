@@ -6,21 +6,27 @@
 //
 
 import UIKit
+import Lottie
 
 class SplashViewController: ViewController {
     
-    @IBOutlet weak var splashOne: UIImageView!
-    @IBOutlet weak var splashTwo: UIImageView!
-    @IBOutlet weak var splashThree: UIImageView!
+    @IBOutlet weak var splashLottie: LottieAnimationView! //Splash Lottie
+    @IBOutlet weak var appHead: UILabel! //App Head
+    @IBOutlet weak var appSubHead: UILabel! //App Subhead
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupImageView()
+        for family in UIFont.familyNames {
+            print(family)
+            for names in UIFont.fontNames(forFamilyName: family) {
+                print("== \(names)")
+            }
+        }
+        
+        setupView()
         
         setupGradientBackground()
-        
-        animateImageView()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.isFirstLaunch()
@@ -28,40 +34,16 @@ class SplashViewController: ViewController {
     }
     
     //Setup ImageView
-    private func setupImageView() {
-        splashOne.layer.cornerRadius = 16
-        splashTwo.layer.cornerRadius = 16
-        splashThree.layer.cornerRadius = 16
-    }
-    
-    //Animate ImageView
-    private func animateImageView() {
-        // Pan animation for SplashOne Image
-        let splashOnePan = CABasicAnimation(keyPath: "position.x")
-        splashOnePan.fromValue = splashOne.layer.position.x - 20
-        splashOnePan.toValue = splashOne.layer.position.x
-        splashOnePan.duration = 0.8
-        splashOnePan.autoreverses = true
-        splashOnePan.timingFunction = CAMediaTimingFunction(name: .easeIn)
-        splashOne.layer.add(splashOnePan, forKey: "topPanAnimation")
-
-        // Pan animation for SplashTwo Image
-        let splashTwoPan = CABasicAnimation(keyPath: "position.x")
-        splashTwoPan.fromValue = splashTwo.layer.position.x + 20
-        splashTwoPan.toValue = splashTwo.layer.position.x
-        splashTwoPan.duration = 0.8
-        splashTwoPan.autoreverses = true
-        splashTwoPan.timingFunction = CAMediaTimingFunction(name: .easeIn)
-        splashTwo.layer.add(splashTwoPan, forKey: "middlePanAnimation")
-
-        // Pan animation for SplashThree Image
-        let splashThreePan = CABasicAnimation(keyPath: "position.x")
-        splashThreePan.fromValue = splashThree.layer.position.x - 20
-        splashThreePan.toValue = splashThree.layer.position.x
-        splashThreePan.duration = 0.8
-        splashThreePan.autoreverses = true
-        splashThreePan.timingFunction = CAMediaTimingFunction(name: .easeIn)
-        splashThree.layer.add(splashThreePan, forKey: "bottomPanAnimation")
+    private func setupView() {
+        //Text Styles
+        appHead.textColor = .white
+        appSubHead.textColor = .white
+        
+        //Lottie Styles
+        splashLottie.contentMode = .scaleAspectFit
+        splashLottie.loopMode = .loop
+        splashLottie.backgroundColor = .clear
+        splashLottie.play()
     }
     
     //Setup Gradient Background Method
@@ -79,7 +61,7 @@ class SplashViewController: ViewController {
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchStatus") //Launched Before
         if launchedBefore {
             // User has launched before, go to login screen
-            self.navigateToSignupScreen()
+            self.navigateToLoginScreen()
         } else {
             // First time launch, go to onboarding screen
             UserDefaults.standard.set(true, forKey: "launchStatus")
@@ -100,14 +82,6 @@ class SplashViewController: ViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let onboardViewController = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
         self.navigationController?.pushViewController(onboardViewController, animated: true)
-        self.navigationController?.viewControllers.remove(at: 0)
-    }
-    
-    //Navigate to Signup Screen
-    private func navigateToSignupScreen() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let signupViewController = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignUpViewController
-        self.navigationController?.pushViewController(signupViewController, animated: true)
         self.navigationController?.viewControllers.remove(at: 0)
     }
 }
