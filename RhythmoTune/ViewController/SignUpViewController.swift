@@ -15,6 +15,8 @@ class SignUpViewController: ViewController {
     @IBOutlet weak var txtEmailAddress: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var footerText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +54,9 @@ class SignUpViewController: ViewController {
         
         //Hide Navigation Back Button
         navigationItem.hidesBackButton = true
+        
+        //Setup Font
+        loginButton.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 12)
         
         //Style SheetView
         bottomView.layer.cornerRadius = 20
@@ -132,7 +137,10 @@ class SignUpViewController: ViewController {
         //Async Task
         Task {
             do {
-                let _ = try await Appwrite().onRegister(email, password) //Register user
+                let (userId, _) = try await Appwrite().onRegister(email, password) //Register user
+                
+                //Store user details
+                UserDefaults.standard.set(userId, forKey: "loggedInUserId")
                 
                 // Success
                 DispatchQueue.main.async {

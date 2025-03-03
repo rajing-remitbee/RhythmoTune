@@ -21,31 +21,18 @@ class Appwrite {
         self.account = Account(client)
     }
     
-    public func onRegister(
-        _ email: String,
-        _ password: String
-    ) async throws -> User<[String: AnyCodable]> {
-        try await account.create(
-            userId: ID.unique(),
-            email: email,
-            password: password
-        )
+    public func onRegister(_ email: String, _ password: String) async throws -> (userId: String, user: User<[String: AnyCodable]>) {
+        let user = try await account.create(userId: ID.unique(), email: email, password: password)
+        return (user.id, user)
     }
     
-    public func onLogin(
-        _ email: String,
-        _ password: String
-    ) async throws -> Session {
-        try await account.createEmailPasswordSession(
-            email: email,
-            password: password
-        )
+    public func onLogin(_ email: String, _ password: String) async throws -> (userId: String, session: Session) {
+        let session = try await account.createEmailPasswordSession(email: email, password: password)
+        return (session.userId, session)
     }
     
     public func onLogout() async throws {
-        _ = try await account.deleteSession(
-            sessionId: "current"
-        )
+        _ = try await account.deleteSession(sessionId: "current")
     }
     
 }

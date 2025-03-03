@@ -138,7 +138,10 @@ class LoginViewController: ViewController {
         // Async Task
         Task {
             do {
-                let _ = try await Appwrite().onLogin(email, password) // Login user
+                let (userId, _) = try await Appwrite().onLogin(email, password) // Login user
+                
+                //Store user details
+                UserDefaults.standard.set(userId, forKey: "loggedInUserId")
                 
                 // Success
                 DispatchQueue.main.async {

@@ -17,13 +17,6 @@ class SplashViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for family in UIFont.familyNames {
-            print(family)
-            for names in UIFont.fontNames(forFamilyName: family) {
-                print("== \(names)")
-            }
-        }
-        
         setupView()
         
         setupGradientBackground()
@@ -58,14 +51,24 @@ class SplashViewController: ViewController {
     
     //Check isFirstLaunch
     func isFirstLaunch() {
-        let launchedBefore = UserDefaults.standard.bool(forKey: "launchStatus") //Launched Before
-        if launchedBefore {
-            // User has launched before, go to login screen
-            self.navigateToLoginScreen()
+        //Check if user is returning user
+        if UserDefaults.standard.string(forKey: "loggedInUserId") != nil {
+            //Show success message
+            Snackbar.shared.showSuccessMessage(message: "Login Successful!", on: self.view)
+            //Navigate to homescreen
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.navigateToHomeScreen()
+            }
         } else {
-            // First time launch, go to onboarding screen
-            UserDefaults.standard.set(true, forKey: "launchStatus")
-            self.navigateToOnboardingScreen()
+            let launchedBefore = UserDefaults.standard.bool(forKey: "launchStatus") //Launched Before
+            if launchedBefore {
+                // User has launched before, go to login screen
+                self.navigateToLoginScreen()
+            } else {
+                // First time launch, go to onboarding screen
+                UserDefaults.standard.set(true, forKey: "launchStatus")
+                self.navigateToOnboardingScreen()
+            }
         }
     }
     
@@ -82,6 +85,14 @@ class SplashViewController: ViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let onboardViewController = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
         self.navigationController?.pushViewController(onboardViewController, animated: true)
+        self.navigationController?.viewControllers.remove(at: 0)
+    }
+    
+    //Navigate to Home Screen
+    private func navigateToHomeScreen() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        self.navigationController?.pushViewController(loginViewController, animated: true)
         self.navigationController?.viewControllers.remove(at: 0)
     }
 }
