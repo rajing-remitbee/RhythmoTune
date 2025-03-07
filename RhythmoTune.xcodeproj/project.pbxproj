@@ -10,6 +10,8 @@
 		44D476460B85ED3B3C0A7473 /* Pods_RhythmoTuneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7466EFA928FC06F4F2F115CC /* Pods_RhythmoTuneTests.framework */; };
 		50BE082860EB38892F6F5F51 /* Pods_RhythmoTune_RhythmoTuneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F75D48697A1927CA1F90142 /* Pods_RhythmoTune_RhythmoTuneUITests.framework */; };
 		6AF6B4C9DD38EBC34EC27118 /* Pods_RhythmoTune.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9CB72486EC7E3793017B0B /* Pods_RhythmoTune.framework */; };
+		ED3D7A802D77030200A8366A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = ED3D7A7F2D77030200A8366A /* SDWebImage */; };
+		ED3D7A822D77030200A8366A /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = ED3D7A812D77030200A8366A /* SDWebImageMapKit */; };
 		EDFB0BF42D6F1A7500197AFD /* Appwrite in Frameworks */ = {isa = PBXBuildFile; productRef = EDFB0BF32D6F1A7500197AFD /* Appwrite */; };
 		EDFB0BFA2D6F1DA400197AFD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EDFB0BF92D6F1DA400197AFD /* Lottie */; };
 		EDFB0BFD2D6F2B5000197AFD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EDFB0BFC2D6F2B5000197AFD /* Lottie */; };
@@ -87,6 +89,8 @@
 				6AF6B4C9DD38EBC34EC27118 /* Pods_RhythmoTune.framework in Frameworks */,
 				EDFB0BFA2D6F1DA400197AFD /* Lottie in Frameworks */,
 				EDFB0BFD2D6F2B5000197AFD /* Lottie in Frameworks */,
+				ED3D7A822D77030200A8366A /* SDWebImageMapKit in Frameworks */,
+				ED3D7A802D77030200A8366A /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +261,7 @@
 			packageReferences = (
 				EDFB0BF22D6F1A7500197AFD /* XCRemoteSwiftPackageReference "sdk-for-apple" */,
 				EDFB0BFB2D6F2B5000197AFD /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				ED3D7A7E2D77030200A8366A /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = ED0840792D6C7C92007A46CC /* Products */;
@@ -702,6 +707,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		ED3D7A7E2D77030200A8366A /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.21.0;
+			};
+		};
 		EDFB0BF22D6F1A7500197AFD /* XCRemoteSwiftPackageReference "sdk-for-apple" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/appwrite/sdk-for-apple";
@@ -729,6 +742,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		ED3D7A7F2D77030200A8366A /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED3D7A7E2D77030200A8366A /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		ED3D7A812D77030200A8366A /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED3D7A7E2D77030200A8366A /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
 		EDFB0BF32D6F1A7500197AFD /* Appwrite */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EDFB0BF22D6F1A7500197AFD /* XCRemoteSwiftPackageReference "sdk-for-apple" */;

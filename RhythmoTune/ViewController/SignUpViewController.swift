@@ -8,7 +8,7 @@
 import UIKit
 import Lottie
 
-class SignUpViewController: ViewController {
+class SignUpViewController: UIViewController {
 
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var bottomLottie: LottieAnimationView!
@@ -104,7 +104,7 @@ class SignUpViewController: ViewController {
     //Navigate to Home Screen
     private func navigateToHomeScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil) //Main Storyboard
-        let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController //Viewcontroller Screen
+        let viewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController //Viewcontroller Screen
         self.navigationController?.setViewControllers([viewController], animated: true) // Set as the only view controller
     }
     

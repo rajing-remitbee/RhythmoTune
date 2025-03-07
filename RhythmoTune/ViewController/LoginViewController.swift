@@ -8,7 +8,7 @@
 import UIKit
 import Lottie
 
-class LoginViewController: ViewController {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginLottie: LottieAnimationView!
     @IBOutlet weak var txtEmailAddress: UITextField!
@@ -77,7 +77,7 @@ class LoginViewController: ViewController {
     //Navigate to Home Screen
     private func navigateToHomeScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil) //Main Storyboard
-        let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController //Viewcontroller Screen
+        let viewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController //Viewcontroller Screen
         self.navigationController?.setViewControllers([viewController], animated: true) // Set as the only view controller
     }
     
