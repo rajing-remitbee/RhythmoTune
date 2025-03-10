@@ -8,6 +8,7 @@
 import AVKit
 
 extension AVPlayer {
+    //Is song playing
     var isPlaying: Bool {
         return rate != 0 && error == nil
     }

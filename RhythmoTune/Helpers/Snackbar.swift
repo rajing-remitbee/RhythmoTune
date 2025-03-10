@@ -12,7 +12,7 @@ class Snackbar {
     //Common instance
     static let shared = Snackbar()
     //
-    private var snackbarView: UIView?
+    private weak var snackbarView: UIView?
     
     private init() {}
     
