@@ -24,9 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Constraint miniplayer
         miniPlayerView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            miniPlayerView.leadingAnchor.constraint(equalTo: window.leadingAnchor),
-            miniPlayerView.trailingAnchor.constraint(equalTo: window.trailingAnchor),
-            miniPlayerView.bottomAnchor.constraint(equalTo: window.bottomAnchor),
+            miniPlayerView.leadingAnchor.constraint(equalTo: window.leadingAnchor, constant: 16), // Padding on leading
+            miniPlayerView.trailingAnchor.constraint(equalTo: window.trailingAnchor, constant: -16), // Padding on trailing
+            miniPlayerView.bottomAnchor.constraint(equalTo: window.safeAreaLayoutGuide.bottomAnchor, constant: 16), // Padding on bottom
             miniPlayerView.heightAnchor.constraint(equalToConstant: 80)
         ])
         

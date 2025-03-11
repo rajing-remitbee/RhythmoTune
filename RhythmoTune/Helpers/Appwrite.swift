@@ -75,5 +75,25 @@ class Appwrite {
             }
         }
     }
+    
+    // Fetch Songs for Specific Artist Service
+    public func fetchSongs(artist artistName: String) async throws -> [Song] {
+        let databaseId = "67c5436a0006be1cbf19"
+        let collectionId = "67c54432002976f34945"
+        
+        let documents = try await self.databases.listDocuments(
+            databaseId: databaseId,
+            collectionId: collectionId,
+            queries: [Query.equal("artist", value: artistName)]
+        )
+        
+        return documents.documents.compactMap { document in
+            if let songId = document.data["songID"], let title = document.data["title"], let artist = document.data["artist"], let album = document.data["album"], let genre = document.data["genre"], let duration = document.data["duration"], let file = document.data["filepath"], let cover = document.data["coverArt"] {
+                return Song(songID: "\(songId)", title: "\(title)", artist: "\(artist)", album: "\(album)", genre: "\(genre)", duration: Int("\(duration)") ?? 0, filepath: "\(file)", coverArt: "\(cover)")
+            } else {
+                return nil
+            }
+        }
+    }
 }
 

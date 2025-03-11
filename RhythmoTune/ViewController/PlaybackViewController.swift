@@ -42,7 +42,7 @@ class PlaybackViewController: UIViewController {
         //Album text
         menuLabel.text = song.album
         
-        //Top Menu Setup
+        //Bottom View Setup
         bottomView.layer.cornerRadius = 20
         bottomView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         bottomView.clipsToBounds = true
@@ -84,6 +84,18 @@ class PlaybackViewController: UIViewController {
         player.play() //Start song
         updateNowPlayingInfo() //Update now playing
         updateMiniPlayer() //Update mini player
+        
+        //Edge swipe gesture
+        let swipeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeGesture.edges = .left //Handle from left edge
+        view.addGestureRecognizer(swipeGesture)
+    }
+    
+    //Handle left edge swipe
+    @objc func handleSwipe(_ gesture: UIScreenEdgePanGestureRecognizer) {
+        if gesture.state == .recognized {
+            navigationController?.popViewController(animated: true) //Navigate back
+        }
     }
     
     //Slider changed or dragged

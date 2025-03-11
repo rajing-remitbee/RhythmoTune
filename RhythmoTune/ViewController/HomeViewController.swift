@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var txtHead: UILabel!
     @IBOutlet weak var txtSubHead: UILabel!
     
+    @IBOutlet weak var bottomMenu: UIView!
     @IBOutlet weak var menuOneIndication: UIView!
     @IBOutlet weak var menuTwoIndication: UIView!
     @IBOutlet weak var menuThreeIndication: UIView!
@@ -168,6 +169,14 @@ class HomeViewController: UIViewController {
         updateMiniPlayer(song: song) //Update miniplayer
     }
     
+    //Navigate to Artist Screen
+    private func navigateToArtistScreen(_ artist: Artist) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let artistViewController = storyboard.instantiateViewController(withIdentifier: "ArtistViewController") as! ArtistViewController
+        artistViewController.artist = artist //Set artist
+        self.navigationController?.pushViewController(artistViewController, animated: true)
+    }
+    
     //Update miniplayer
     private func updateMiniPlayer(song: Song) {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
@@ -228,7 +237,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     //Collection View onpressed
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView.tag == 1 {
-            
+            let artist = artists[indexPath.item]
+            navigateToArtistScreen(artist)
         } else {
             let song = songs[indexPath.item]
             navigateToPlaybackScreen(song)

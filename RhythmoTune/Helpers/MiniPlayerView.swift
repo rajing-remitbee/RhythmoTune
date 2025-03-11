@@ -15,6 +15,8 @@ class MiniPlayerView: UIView {
     let titleLabel = UILabel() //Title
     let artistLabel = UILabel() //Artist
     let playPauseButton = UIButton() //Play and Pause Button
+    let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .systemMaterial)) // Blur effect
+    let closeButton = UIButton(type: .system)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,11 +33,17 @@ class MiniPlayerView: UIView {
     }
     
     private func setupViews() {
-        backgroundColor = UIColor.systemGray6 //Background Color
+        backgroundColor = .clear //Clear Background Color
+        
+        // Blur effect view
+        blurEffectView.layer.cornerRadius = 12 // Rounded corners for blur
+        blurEffectView.clipsToBounds = true
+        addSubview(blurEffectView)
         
         //Cover Image
         coverImageView.contentMode = .scaleAspectFill
         coverImageView.clipsToBounds = true
+        coverImageView.layer.cornerRadius = 8
         addSubview(coverImageView)
         
         //Song Title
@@ -53,16 +61,30 @@ class MiniPlayerView: UIView {
         playPauseButton.tintColor = .label
         playPauseButton.addTarget(self, action: #selector(playPauseTapped), for: .touchUpInside)
         addSubview(playPauseButton)
+        
+        // Close button setup
+        closeButton.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal) // Set the image
+        closeButton.tintColor = .label // Set the color
+        closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside) // Add target
+        addSubview(closeButton)
     }
     
     private func setupConstraints() {
         //Constratinsts
+        blurEffectView.translatesAutoresizingMaskIntoConstraints = false
         coverImageView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         artistLabel.translatesAutoresizingMaskIntoConstraints = false
         playPauseButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
+            // Blur effect view constraints
+            blurEffectView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            blurEffectView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            blurEffectView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            blurEffectView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
+            
             //Cover Image Constraints
             coverImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             coverImageView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
@@ -80,16 +102,28 @@ class MiniPlayerView: UIView {
             artistLabel.trailingAnchor.constraint(equalTo: playPauseButton.leadingAnchor, constant: -8),
             
             //Play & Pause Button Constraints
-            playPauseButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            playPauseButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32),
             playPauseButton.centerYAnchor.constraint(equalTo: centerYAnchor),
             playPauseButton.widthAnchor.constraint(equalToConstant: 30),
-            playPauseButton.heightAnchor.constraint(equalToConstant: 30)
+            playPauseButton.heightAnchor.constraint(equalToConstant: 30),
+            
+            //Close Button
+            closeButton.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            closeButton.widthAnchor.constraint(equalToConstant: 30),
+            closeButton.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
     
     private func setupGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(miniPlayerTapped))
         addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func closeButtonTapped(_ sender: Any) {
+        AudioManager.shared.player.pause()
+        AudioManager.shared.player.replaceCurrentItem(with: nil)
+        self.isHidden = true
     }
     
     //Configure Mini Player
@@ -117,10 +151,17 @@ class MiniPlayerView: UIView {
     
     //Mini Player tapped listener
     @objc func miniPlayerTapped() {
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let playbackViewController = storyboard.instantiateViewController(withIdentifier: "PlaybackViewController") as! PlaybackViewController
-            appDelegate.window?.rootViewController?.present(playbackViewController, animated: true, completion: nil)
+        if
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate, // AppDelegate
+            let navigationController = appDelegate.window?.rootViewController as? UINavigationController, //Navigation Controller
+            let currentSong = AudioManager.shared.currentSong, //Current Song
+            let currentArtist = AudioManager.shared.currentArtist //Current Artist
+        {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil) //Storyboard
+            let playbackViewController = storyboard.instantiateViewController(withIdentifier: "PlaybackViewController") as! PlaybackViewController //PlaybackViewController
+            playbackViewController.song = currentSong //Set current song
+            playbackViewController.artistName = currentArtist //Set current artist
+            navigationController.pushViewController(playbackViewController, animated: true) // Push viewcontroller to stack
         }
     }
     
