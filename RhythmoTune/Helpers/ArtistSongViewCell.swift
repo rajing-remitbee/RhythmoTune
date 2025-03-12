@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class ArtistSongViewCell: UICollectionViewCell {
+class ArtistSongViewCell: UITableViewCell {
     
     @IBOutlet weak var songCover: UIImageView!
     @IBOutlet weak var songTitle: UILabel!

@@ -32,6 +32,9 @@ class PlaybackViewController: UIViewController {
     var song: Song!
     var artistName: String!
     weak var player: AVPlayer!
+    
+    var isRepeatEnabled = false
+    var isMuted = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +45,10 @@ class PlaybackViewController: UIViewController {
         //Album text
         menuLabel.text = song.album
         
+        //Slider Properties
+        songSlider.minimumTrackTintColor = .white
+        songSlider.maximumTrackTintColor = .systemGray
+        
         //Bottom View Setup
         bottomView.layer.cornerRadius = 20
         bottomView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -50,6 +57,11 @@ class PlaybackViewController: UIViewController {
         
         //Play & Pause Button Setup
         btnPlayPause?.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+        btnRepeat.layer.cornerRadius = 8
+        btnRepeat?.setImage(UIImage(systemName: "repeat"), for: .normal)
+        btnRepeat?.tintColor = .white
+        btnVolume?.tintColor = .white
+        btnVolume?.setImage(UIImage(systemName: "speaker.wave.2.fill"), for: .normal)
         
         //Audio Player
         player = AudioManager.shared.player
@@ -89,6 +101,17 @@ class PlaybackViewController: UIViewController {
         let swipeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
         swipeGesture.edges = .left //Handle from left edge
         view.addGestureRecognizer(swipeGesture)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem)
+    }
+    
+    //Handle Player Reached End
+    @objc func playerItemDidReachEnd() {
+        if isRepeatEnabled {
+            player.seek(to: .zero) // Seek to the beginning
+            player.play() // Play again
+            updateMiniPlayer()
+        }
     }
     
     //Handle left edge swipe
@@ -108,6 +131,18 @@ class PlaybackViewController: UIViewController {
     //Back pressed
     @IBAction func btnBack(_ sender: UIButton) {
         navigationController?.popViewController(animated: true) //Navigate back
+    }
+    
+    //Volume Button Pressed
+    @IBAction func btnVolumeButtonPressed(_ sender: UIButton) {
+        isMuted.toggle()
+        if isMuted {
+            btnVolume.setImage(UIImage(systemName: "speaker.slash.fill"), for: .normal)
+            player.volume = 0.0
+        } else {
+            btnVolume.setImage(UIImage(systemName: "speaker.wave.2.fill"), for: .normal)
+            player.volume = 1.0
+        }
     }
     
     //Play & Pause button pressed
@@ -137,6 +172,23 @@ class PlaybackViewController: UIViewController {
         player.seek(to: forwardTime)
         updateMiniPlayer() //Update mini player
     }
+    
+    //Repeat Button Tapped
+    @IBAction func btnRepeatTapped(_ sender: UIButton) {
+        isRepeatEnabled.toggle()
+        updateRepeatButtonAppearance()
+    }
+    
+    func updateRepeatButtonAppearance() {
+        if isRepeatEnabled {
+            btnRepeat.backgroundColor = .systemGray6
+            btnRepeat.tintColor = .black
+        } else {
+            btnRepeat.backgroundColor = .clear
+            btnRepeat.tintColor = .white
+        }
+    }
+    
     
     //Time formatter
     private func formatTime(seconds: Int) -> String {

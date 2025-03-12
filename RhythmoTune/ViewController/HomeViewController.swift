@@ -23,6 +23,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var songCollectionView: UICollectionView!
     @IBOutlet weak var artistCollectionView: UICollectionView!
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var songs: [Song] = []
     var artists: [Artist] = []
     
@@ -41,6 +43,17 @@ class HomeViewController: UIViewController {
         songCollectionView.tag = 2
         songCollectionView.delegate = self
         songCollectionView.dataSource = self
+        
+        //SearchView
+        if let mySearchBar = searchBar {
+            //Font
+            if let placeholderFont = UIFont(name: "Montserrat-Regular", size: 16) {
+                //Change placeholder font
+                changeSearchBarPlaceholderFont(searchBar: mySearchBar, placeholder: "Search Songs and Artists....", font: placeholderFont, color: UIColor.darkGray)
+            } else {
+                print("Font not found")
+            }
+        }
         
         //Mini player
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
@@ -200,6 +213,20 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
+    //Change Placeholder Text
+    func changeSearchBarPlaceholderFont(searchBar: UISearchBar, placeholder: String, font: UIFont, color: UIColor) {
+        //Get textfield from search view
+        //Attributed Text
+        if let textField = searchBar.value(forKey: "searchField") as? UITextField {
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: font,
+                .foregroundColor: color
+            ]
+            //Set attributes for placeholder
+            textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attributes)
+        }
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -243,5 +270,17 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let song = songs[indexPath.item]
             navigateToPlaybackScreen(song)
         }
+    }
+}
+
+extension HomeViewController: UISearchBarDelegate {
+    //When clicked on search bar
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil) //Main Storyboard
+        let searchViewController = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController //Search Viewcontroller
+        searchViewController.allSongs = songs //Assign songs
+        searchViewController.allArtists = artists //Assign artists
+        navigationController?.pushViewController(searchViewController, animated: true) //Push to stack
+        return false
     }
 }
