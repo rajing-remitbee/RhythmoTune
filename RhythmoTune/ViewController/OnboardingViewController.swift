@@ -8,7 +8,7 @@
 import UIKit
 import Lottie
 
-class OnboardingViewController: ViewController {
+class OnboardingViewController: UIViewController {
 
     @IBOutlet weak var onboardingLottie: LottieAnimationView!
     

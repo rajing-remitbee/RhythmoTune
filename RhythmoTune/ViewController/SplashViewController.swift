@@ -8,7 +8,7 @@
 import UIKit
 import Lottie
 
-class SplashViewController: ViewController {
+class SplashViewController: UIViewController {
     
     @IBOutlet weak var splashLottie: LottieAnimationView! //Splash Lottie
     @IBOutlet weak var appHead: UILabel! //App Head
@@ -91,7 +91,7 @@ class SplashViewController: ViewController {
     //Navigate to Home Screen
     private func navigateToHomeScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         self.navigationController?.pushViewController(loginViewController, animated: true)
         self.navigationController?.viewControllers.remove(at: 0)
     }
