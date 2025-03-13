@@ -9,8 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Montserrat-Black.ttf">
+            <string>Montserrat-Black</string>
+        </array>
         <array key="Montserrat-Bold.ttf">
             <string>Montserrat-Bold</string>
+        </array>
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
         </array>
         <array key="Montserrat-Regular.ttf">
             <string>Montserrat-Regular</string>
@@ -43,36 +49,22 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="Splash"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbp-bq-wYe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RhythmoTune" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbp-bq-wYe">
                                 <rect key="frame" x="0.0" y="494" width="320" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="UtI-e5-SbG"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="RhythmoTune">
-                                        <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="25" name="Montserrat-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R73-93-45W">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R73-93-45W">
                                 <rect key="frame" x="0.0" y="531" width="320" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="CuQ-Ds-96L"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="Version 1.0">
-                                        <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="15" name="Montserrat-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -110,6 +102,93 @@
             </objects>
             <point key="canvasLocation" x="-1024" y="-32"/>
         </scene>
+        <!--Playlist View Controller-->
+        <scene sceneID="GQB-hX-5rs">
+            <objects>
+                <viewController storyboardIdentifier="PlaylistViewController" id="wPd-aO-jaY" customClass="PlaylistViewController" customModule="RhythmoTune" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6da-tP-7jH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playlist View Controller" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2et-1a-ocU">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g4j-jp-JO9"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="g4j-jp-JO9" firstAttribute="trailing" secondItem="2et-1a-ocU" secondAttribute="trailing" id="0IV-81-5Yg"/>
+                            <constraint firstItem="g4j-jp-JO9" firstAttribute="bottom" secondItem="2et-1a-ocU" secondAttribute="bottom" id="Uj3-6a-WbS"/>
+                            <constraint firstItem="2et-1a-ocU" firstAttribute="top" secondItem="g4j-jp-JO9" secondAttribute="top" id="rtN-oL-I9S"/>
+                            <constraint firstItem="2et-1a-ocU" firstAttribute="leading" secondItem="g4j-jp-JO9" secondAttribute="leading" id="xMc-Sv-7vB"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IpP-n9-itu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="915" y="-790"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="KCf-OK-7CR">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="hES-gf-jAp" customClass="ProfileViewController" customModule="RhythmoTune" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tWP-gI-u9A">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ProfileViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfB-L0-3yp">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="i9s-SD-R8f"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <constraints>
+                            <constraint firstItem="i9s-SD-R8f" firstAttribute="trailing" secondItem="LfB-L0-3yp" secondAttribute="trailing" id="Okr-pb-odX"/>
+                            <constraint firstItem="i9s-SD-R8f" firstAttribute="bottom" secondItem="LfB-L0-3yp" secondAttribute="bottom" id="Wmg-k2-jC8"/>
+                            <constraint firstItem="LfB-L0-3yp" firstAttribute="leading" secondItem="i9s-SD-R8f" secondAttribute="leading" id="agA-xa-zR0"/>
+                            <constraint firstItem="LfB-L0-3yp" firstAttribute="top" secondItem="i9s-SD-R8f" secondAttribute="top" id="dQh-yw-ErN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FZa-ut-vrt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1898" y="-790"/>
+        </scene>
+        <!--Explore View Controller-->
+        <scene sceneID="zhW-l3-qmh">
+            <objects>
+                <viewController storyboardIdentifier="ExploreViewController" id="csV-th-iFJ" customClass="ExploreViewController" customModule="RhythmoTune" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tp7-w7-GeP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore ViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BK-57-KrB">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wsx-hU-JZz"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <constraints>
+                            <constraint firstItem="wsx-hU-JZz" firstAttribute="bottom" secondItem="4BK-57-KrB" secondAttribute="bottom" id="Jls-wD-B5X"/>
+                            <constraint firstAttribute="trailing" secondItem="4BK-57-KrB" secondAttribute="trailing" id="fpP-CY-NPV"/>
+                            <constraint firstItem="4BK-57-KrB" firstAttribute="leading" secondItem="wsx-hU-JZz" secondAttribute="leading" id="i8b-BM-13d"/>
+                            <constraint firstItem="4BK-57-KrB" firstAttribute="top" secondItem="wsx-hU-JZz" secondAttribute="top" id="x14-m1-abU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NFj-1G-dR7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-11" y="-790"/>
+        </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="SQC-Kc-a9f">
             <objects>
@@ -136,65 +215,40 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="Onboarding"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naI-3G-5Yt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dive Into Your" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naI-3G-5Yt">
                                 <rect key="frame" x="16" y="356" width="288" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="vGa-eh-BkN"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="Dive Into Your">
-                                        <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="30" name="Montserrat-Black"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" name="Montserrat-Black" family="Montserrat" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNj-9R-T6w">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RhythmoTune" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNj-9R-T6w">
                                 <rect key="frame" x="16" y="393" width="288" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="ynn-QK-tmZ"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="RhythmoTune">
-                                        <attributes>
-                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="30" name="Montserrat-Black"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" name="Montserrat-Black" family="Montserrat" pointSize="30"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyk-v8-N6o">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Experience seamless music," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyk-v8-N6o">
                                 <rect key="frame" x="16" y="454" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="rx5-vf-LlM"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="Experience seamless music,">
-                                        <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="17" name="Montserrat-Medium"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahI-Ov-QEx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="crafted for every moment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahI-Ov-QEx">
                                 <rect key="frame" x="16" y="475" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="jJr-BO-boI"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="crafted for every moment">
-                                        <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="17" name="Montserrat-Medium"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWE-PZ-Sd4">
@@ -275,35 +329,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1n-sj-bXV" userLabel="headView">
                                 <rect key="frame" x="16" y="20" width="288" height="55"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHf-TF-f2i">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Afternoon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHf-TF-f2i">
                                         <rect key="frame" x="4" y="5.5" width="280" height="29.5"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Good Afternoon">
-                                                <attributes>
-                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <font key="NSFont" size="24" name="Montserrat-Black"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                        <fontDescription key="fontDescription" name="Montserrat-Black" family="Montserrat" pointSize="24"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZi-ea-pjg">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enjoy some relaxing tunes for your afternoon break." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZi-ea-pjg">
                                         <rect key="frame" x="4" y="35" width="280" height="12"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Enjoy some relaxing tunes for your afternoon break.">
-                                                <attributes>
-                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <font key="NSFont" size="10" name="Montserrat-Bold"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                        <tabStops/>
-                                                    </paragraphStyle>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <real key="NSStrokeWidth" value="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -334,17 +369,10 @@
                                                             <outlet property="delegate" destination="BYZ-38-t0r" id="YfN-CF-VLf"/>
                                                         </connections>
                                                     </searchBar>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFN-BM-9ah">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular Songs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFN-BM-9ah">
                                                         <rect key="frame" x="24" y="88" width="137" height="22"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="Popular Songs">
-                                                                <attributes>
-                                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <font key="NSFont" size="18" name="Montserrat-Bold"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
+                                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="31L-SQ-NNU">
@@ -374,16 +402,10 @@
                                                                                 <constraint firstAttribute="height" constant="150" id="WdK-et-0nd"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4d-Ls-udO">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channa Mereya" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4d-Ls-udO">
                                                                             <rect key="frame" x="16" y="121" width="126" height="13"/>
-                                                                            <attributedString key="attributedText">
-                                                                                <fragment content="Channa Mereya">
-                                                                                    <attributes>
-                                                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <font key="NSFont" size="11" name="Montserrat-Bold"/>
-                                                                                    </attributes>
-                                                                                </fragment>
-                                                                            </attributedString>
+                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="11"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -405,17 +427,10 @@
                                                             </collectionViewCell>
                                                         </cells>
                                                     </collectionView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQh-aY-PeE">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular Artists" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQh-aY-PeE">
                                                         <rect key="frame" x="24" y="314" width="272" height="22"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="Popular Artists">
-                                                                <attributes>
-                                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <font key="NSFont" size="18" name="Montserrat-Bold"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
+                                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Uch-zE-g9L">
@@ -445,16 +460,10 @@
                                                                                 <constraint firstAttribute="width" constant="150" id="Adj-cb-bov"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebm-mR-8g2">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channa Mereya" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebm-mR-8g2">
                                                                             <rect key="frame" x="16" y="121" width="126" height="13"/>
-                                                                            <attributedString key="attributedText">
-                                                                                <fragment content="Channa Mereya">
-                                                                                    <attributes>
-                                                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <font key="NSFont" size="11" name="Montserrat-Bold"/>
-                                                                                    </attributes>
-                                                                                </fragment>
-                                                                            </attributedString>
+                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="11"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -686,10 +695,15 @@
                     </view>
                     <connections>
                         <outlet property="artistCollectionView" destination="Uch-zE-g9L" id="cwu-Xy-WbD"/>
+                        <outlet property="bodyView" destination="uaC-si-DJZ" id="l4M-GS-WjG"/>
                         <outlet property="bottomMenu" destination="1bs-gG-Ibw" id="2RG-T8-Zgk"/>
+                        <outlet property="menuFour" destination="dF5-y4-Owh" id="0B5-H8-LDf"/>
                         <outlet property="menuFourIndication" destination="vp7-oA-OFN" id="S4u-WQ-DgZ"/>
+                        <outlet property="menuOne" destination="INy-au-Xlf" id="eUQ-Sw-ZJD"/>
                         <outlet property="menuOneIndication" destination="qmo-mm-cDh" id="ZpL-sW-L2K"/>
+                        <outlet property="menuThree" destination="Ai4-Rv-ask" id="lnU-8W-rml"/>
                         <outlet property="menuThreeIndication" destination="SFU-eM-KHN" id="7sY-MO-E4w"/>
+                        <outlet property="menuTwo" destination="9FA-q6-sih" id="TzF-pb-MJ4"/>
                         <outlet property="menuTwoIndication" destination="XAo-4l-Z9p" id="7w3-PN-0dq"/>
                         <outlet property="progressIndicator" destination="l6g-qZ-dau" id="LMA-8L-qzx"/>
                         <outlet property="searchBar" destination="dZT-hC-bMv" id="avm-qT-aAy"/>
@@ -724,50 +738,45 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qwE-tt-3Y3" userLabel="headView">
                                 <rect key="frame" x="16" y="20" width="288" height="57"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbw-rV-9eO">
-                                        <rect key="frame" x="4" y="7.5" width="280" height="29.5"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Search">
-                                                <attributes>
-                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <font key="NSFont" size="24" name="Montserrat-Black"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtw-x9-IVl">
-                                        <rect key="frame" x="4" y="37" width="280" height="12"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Search for your favourite songs, artists, etc.">
-                                                <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="10" name="Montserrat-Bold"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                        <tabStops/>
-                                                    </paragraphStyle>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <real key="NSStrokeWidth" value="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="PMC-FL-W1Q">
+                                        <rect key="frame" x="59" y="7.5" width="150.5" height="42"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbw-rV-9eO">
+                                                <rect key="frame" x="0.0" y="0.0" width="89" height="29.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Black" family="Montserrat" pointSize="24"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search for songs, artists, etc." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtw-x9-IVl">
+                                                <rect key="frame" x="0.0" y="29.5" width="150.5" height="12.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Skl-lL-Dxf">
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="57"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="arrowshape.left.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="3fU-fL-XTX" eventType="touchUpInside" id="uqO-zm-QUf"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="xtw-x9-IVl" firstAttribute="top" secondItem="lbw-rV-9eO" secondAttribute="bottom" id="CiN-3S-pvm"/>
-                                    <constraint firstAttribute="bottom" secondItem="xtw-x9-IVl" secondAttribute="bottom" constant="8" id="XeD-P2-g68"/>
-                                    <constraint firstAttribute="trailing" secondItem="xtw-x9-IVl" secondAttribute="trailing" constant="4" id="dUI-oS-e3f"/>
-                                    <constraint firstAttribute="trailing" secondItem="lbw-rV-9eO" secondAttribute="trailing" constant="4" id="gA8-0k-PyI"/>
-                                    <constraint firstItem="lbw-rV-9eO" firstAttribute="leading" secondItem="qwE-tt-3Y3" secondAttribute="leading" constant="4" id="kYc-nF-JJ5"/>
-                                    <constraint firstItem="xtw-x9-IVl" firstAttribute="leading" secondItem="qwE-tt-3Y3" secondAttribute="leading" constant="4" id="mOk-KM-tBe"/>
+                                    <constraint firstItem="PMC-FL-W1Q" firstAttribute="leading" secondItem="Skl-lL-Dxf" secondAttribute="trailing" constant="8" id="1a9-9W-0cH"/>
+                                    <constraint firstItem="Skl-lL-Dxf" firstAttribute="height" secondItem="qwE-tt-3Y3" secondAttribute="height" id="K0T-Ol-FV4"/>
+                                    <constraint firstItem="Skl-lL-Dxf" firstAttribute="leading" secondItem="qwE-tt-3Y3" secondAttribute="leading" id="L07-7l-vKX"/>
+                                    <constraint firstItem="Skl-lL-Dxf" firstAttribute="top" secondItem="qwE-tt-3Y3" secondAttribute="top" id="NQk-xh-1KZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Skl-lL-Dxf" secondAttribute="bottom" id="OJF-Jj-jMX"/>
+                                    <constraint firstItem="PMC-FL-W1Q" firstAttribute="centerY" secondItem="qwE-tt-3Y3" secondAttribute="centerY" id="Wc0-43-pHd"/>
                                 </constraints>
                             </view>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search songs, artists...." translatesAutoresizingMaskIntoConstraints="NO" id="JSo-Uq-koY">
-                                <rect key="frame" x="24" y="93" width="272" height="56"/>
+                                <rect key="frame" x="24" y="77" width="272" height="56"/>
                                 <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -775,14 +784,14 @@
                                 </connections>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZE-bL-hcf" customClass="LottieAnimationView" customModule="Lottie">
-                                <rect key="frame" x="16" y="165" width="288" height="403"/>
+                                <rect key="frame" x="16" y="149" width="288" height="419"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="Search"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WVp-PQ-pgf">
-                                <rect key="frame" x="16" y="165" width="288" height="403"/>
+                                <rect key="frame" x="16" y="149" width="288" height="419"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SongTableCell" id="3Mc-CN-jgo" customClass="SongTableViewCell" customModule="RhythmoTune" customModuleProvider="target">
@@ -869,9 +878,8 @@
                             <constraint firstItem="WVp-PQ-pgf" firstAttribute="top" secondItem="JSo-Uq-koY" secondAttribute="bottom" constant="16" id="QZf-FJ-51Z"/>
                             <constraint firstItem="qwE-tt-3Y3" firstAttribute="height" secondItem="tXz-Jb-mLc" secondAttribute="height" multiplier="0.1" id="SG6-ZI-oLP"/>
                             <constraint firstItem="qwE-tt-3Y3" firstAttribute="top" secondItem="LGl-bB-1fA" secondAttribute="top" id="TTD-qO-L2p"/>
-                            <constraint firstItem="JSo-Uq-koY" firstAttribute="top" secondItem="qwE-tt-3Y3" secondAttribute="bottom" constant="16" id="aDU-BS-8ea"/>
+                            <constraint firstItem="JSo-Uq-koY" firstAttribute="top" secondItem="qwE-tt-3Y3" secondAttribute="bottom" id="aDU-BS-8ea"/>
                             <constraint firstItem="KZE-bL-hcf" firstAttribute="top" secondItem="JSo-Uq-koY" secondAttribute="bottom" constant="16" id="cgT-SE-doD"/>
-                            <constraint firstItem="qwE-tt-3Y3" firstAttribute="leading" secondItem="LGl-bB-1fA" secondAttribute="leading" constant="16" id="cha-fg-1td"/>
                             <constraint firstItem="Sx6-CX-1v4" firstAttribute="top" secondItem="tXz-Jb-mLc" secondAttribute="top" id="f5N-WP-eGI"/>
                             <constraint firstItem="LGl-bB-1fA" firstAttribute="trailing" secondItem="Sx6-CX-1v4" secondAttribute="trailing" id="h0a-7X-ESg"/>
                             <constraint firstItem="LGl-bB-1fA" firstAttribute="bottom" secondItem="WVp-PQ-pgf" secondAttribute="bottom" id="h8C-eH-N91"/>
@@ -882,11 +890,13 @@
                             <constraint firstItem="JSo-Uq-koY" firstAttribute="leading" secondItem="LGl-bB-1fA" secondAttribute="leading" constant="24" id="qa8-BC-JtX"/>
                             <constraint firstItem="LGl-bB-1fA" firstAttribute="trailing" secondItem="WVp-PQ-pgf" secondAttribute="trailing" constant="16" id="uGc-xq-oQH"/>
                             <constraint firstAttribute="bottom" secondItem="lpe-YC-8iO" secondAttribute="bottom" id="vsS-YV-22D"/>
+                            <constraint firstItem="qwE-tt-3Y3" firstAttribute="leading" secondItem="LGl-bB-1fA" secondAttribute="leading" constant="16" id="vvO-KK-AZ5"/>
                             <constraint firstItem="LGl-bB-1fA" firstAttribute="trailing" secondItem="KZE-bL-hcf" secondAttribute="trailing" constant="16" id="xKi-KD-qsT"/>
                             <constraint firstAttribute="bottom" secondItem="Sx6-CX-1v4" secondAttribute="bottom" id="y5u-pt-CwF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnBack" destination="Skl-lL-Dxf" id="c2g-Fx-vRv"/>
                         <outlet property="lottieAnimationView" destination="KZE-bL-hcf" id="yFl-5H-KUA"/>
                         <outlet property="searchBar" destination="JSo-Uq-koY" id="x0m-Vs-lni"/>
                         <outlet property="tableView" destination="WVp-PQ-pgf" id="plQ-0Z-ccE"/>
@@ -922,20 +932,13 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="Login"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEF-N5-QhK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEF-N5-QhK">
                                 <rect key="frame" x="16" y="237" width="288" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="DCs-h5-3xY"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="Login">
-                                        <attributes>
-                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="40" name="Montserrat-Black"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" name="Montserrat-Black" family="Montserrat" pointSize="40"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WkH-GO-mPd">
@@ -943,17 +946,26 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Jn3-x3-2UQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JfX-oC-5LT">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JfX-oC-5LT">
                                 <rect key="frame" x="16" y="349" width="288" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QYg-lV-xv5"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f58-aA-kKW">
+                                <rect key="frame" x="267" y="349" width="29" height="40"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="togglePasswordVisibility:" destination="RBW-2X-GNl" eventType="touchUpInside" id="yOh-mO-r5v"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5D-cj-eLP">
                                 <rect key="frame" x="16" y="405" width="288" height="40"/>
                                 <constraints>
@@ -970,32 +982,26 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HH7-XE-9GM">
-                                <rect key="frame" x="16" y="461" width="288" height="30"/>
+                                <rect key="frame" x="40" y="461" width="240" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="t6o-QB-q5h"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Don't have an account? SignUp!">
-                                    <fontDescription key="titleFontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Don't have an account? SignUp!" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="signUpPressed:" destination="RBW-2X-GNl" eventType="touchUpInside" id="dFN-aJ-9Ga"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="err-Yn-va6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RhythmoTune" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="err-Yn-va6">
                                 <rect key="frame" x="0.0" y="507" width="320" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Hkb-Dg-NE8"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="RhythmoTune">
-                                        <attributes>
-                                            <font key="NSFont" size="17" name="Montserrat-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="wQt-i4-EDc">
@@ -1008,20 +1014,24 @@
                         <constraints>
                             <constraint firstItem="t5D-cj-eLP" firstAttribute="top" secondItem="JfX-oC-5LT" secondAttribute="bottom" constant="16" id="17b-KX-Lhe"/>
                             <constraint firstItem="WkH-GO-mPd" firstAttribute="leading" secondItem="FYG-3k-j2O" secondAttribute="leading" constant="16" id="6td-uZ-a1D"/>
-                            <constraint firstItem="FYG-3k-j2O" firstAttribute="trailing" secondItem="JfX-oC-5LT" secondAttribute="trailing" constant="16" id="8hY-Ju-Efk"/>
                             <constraint firstItem="HH7-XE-9GM" firstAttribute="top" secondItem="t5D-cj-eLP" secondAttribute="bottom" constant="16" id="BBY-VR-JkR"/>
-                            <constraint firstItem="HH7-XE-9GM" firstAttribute="leading" secondItem="FYG-3k-j2O" secondAttribute="leading" constant="16" id="E4C-h2-Djs"/>
+                            <constraint firstItem="HH7-XE-9GM" firstAttribute="leading" secondItem="FYG-3k-j2O" secondAttribute="leading" constant="40" id="E4C-h2-Djs"/>
                             <constraint firstItem="err-Yn-va6" firstAttribute="leading" secondItem="FYG-3k-j2O" secondAttribute="leading" id="EOl-TN-aIk"/>
                             <constraint firstItem="FYG-3k-j2O" firstAttribute="trailing" secondItem="XEF-N5-QhK" secondAttribute="trailing" constant="16" id="EPz-TV-Gmo"/>
                             <constraint firstItem="FYG-3k-j2O" firstAttribute="trailing" secondItem="t5D-cj-eLP" secondAttribute="trailing" constant="16" id="Fal-f2-vuw"/>
                             <constraint firstItem="FYG-3k-j2O" firstAttribute="trailing" secondItem="DnP-Pu-81w" secondAttribute="trailing" id="GwZ-RD-ozM"/>
+                            <constraint firstItem="f58-aA-kKW" firstAttribute="width" secondItem="JfX-oC-5LT" secondAttribute="width" multiplier="0.1" id="HLt-13-k42"/>
+                            <constraint firstItem="f58-aA-kKW" firstAttribute="bottom" secondItem="JfX-oC-5LT" secondAttribute="bottom" id="HiW-V2-Iri"/>
+                            <constraint firstItem="f58-aA-kKW" firstAttribute="height" secondItem="JfX-oC-5LT" secondAttribute="height" id="IAe-5a-eNP"/>
                             <constraint firstItem="XEF-N5-QhK" firstAttribute="leading" secondItem="FYG-3k-j2O" secondAttribute="leading" constant="16" id="It4-Xz-j6P"/>
                             <constraint firstItem="MMa-fH-nsP" firstAttribute="leading" secondItem="FYG-3k-j2O" secondAttribute="leading" constant="40" id="Jv2-4L-Lt7"/>
                             <constraint firstItem="JfX-oC-5LT" firstAttribute="top" secondItem="WkH-GO-mPd" secondAttribute="bottom" constant="16" id="L1e-qT-gXk"/>
-                            <constraint firstItem="FYG-3k-j2O" firstAttribute="trailing" secondItem="HH7-XE-9GM" secondAttribute="trailing" constant="16" id="Myx-7F-hpV"/>
+                            <constraint firstItem="FYG-3k-j2O" firstAttribute="trailing" secondItem="HH7-XE-9GM" secondAttribute="trailing" constant="40" id="Myx-7F-hpV"/>
                             <constraint firstAttribute="bottom" secondItem="err-Yn-va6" secondAttribute="bottom" constant="40" id="NeJ-gn-6ih"/>
+                            <constraint firstItem="f58-aA-kKW" firstAttribute="trailing" secondItem="JfX-oC-5LT" secondAttribute="trailing" constant="-8" id="QG8-Uo-yNm"/>
                             <constraint firstAttribute="bottom" secondItem="DnP-Pu-81w" secondAttribute="bottom" id="QyY-Mf-vfW"/>
                             <constraint firstAttribute="bottom" secondItem="NMc-Xl-hfg" secondAttribute="bottom" id="S41-ME-ObY"/>
+                            <constraint firstItem="f58-aA-kKW" firstAttribute="top" secondItem="JfX-oC-5LT" secondAttribute="top" id="TTT-eG-thZ"/>
                             <constraint firstAttribute="trailing" secondItem="wQt-i4-EDc" secondAttribute="trailing" id="URo-jY-UJW"/>
                             <constraint firstItem="wQt-i4-EDc" firstAttribute="top" secondItem="Vg1-ca-Kt2" secondAttribute="top" id="UZW-Oy-gBz"/>
                             <constraint firstItem="DnP-Pu-81w" firstAttribute="leading" secondItem="FYG-3k-j2O" secondAttribute="leading" id="Wrc-db-2UV"/>
@@ -1039,11 +1049,13 @@
                             <constraint firstItem="DnP-Pu-81w" firstAttribute="top" secondItem="Vg1-ca-Kt2" secondAttribute="top" id="ugP-N0-CkH"/>
                             <constraint firstItem="MMa-fH-nsP" firstAttribute="top" secondItem="FYG-3k-j2O" secondAttribute="top" constant="16" id="vyY-MM-cBM"/>
                             <constraint firstItem="NMc-Xl-hfg" firstAttribute="top" secondItem="Vg1-ca-Kt2" secondAttribute="top" id="w1o-lf-mcq"/>
+                            <constraint firstItem="FYG-3k-j2O" firstAttribute="trailing" secondItem="JfX-oC-5LT" secondAttribute="trailing" constant="16" id="wfa-le-ZdB"/>
                             <constraint firstItem="FYG-3k-j2O" firstAttribute="trailing" secondItem="NMc-Xl-hfg" secondAttribute="trailing" id="zwO-R9-r9Q"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="wQt-i4-EDc" id="tNF-1r-BS9"/>
+                        <outlet property="eyeToggleButton" destination="f58-aA-kKW" id="Q6v-eT-Pnz"/>
                         <outlet property="loginLottie" destination="MMa-fH-nsP" id="dpu-1B-RkQ"/>
                         <outlet property="signUpButton" destination="HH7-XE-9GM" id="uwE-BF-cUX"/>
                         <outlet property="txtEmailAddress" destination="WkH-GO-mPd" id="VFL-Kc-hKz"/>
@@ -1073,36 +1085,22 @@
                                 </view>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atG-hN-aHp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Started Now" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atG-hN-aHp">
                                 <rect key="frame" x="16" y="28" width="288" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="a18-HN-I8I"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="Get Started Now">
-                                        <attributes>
-                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="30" name="Montserrat-Black"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" name="Montserrat-Black" family="Montserrat" pointSize="30"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnE-34-2T9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnE-34-2T9">
                                 <rect key="frame" x="16" y="68" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="fva-2h-pFO"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="Create a new account">
-                                        <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="15" name="Montserrat-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUA-jI-aAT">
@@ -1125,7 +1123,7 @@
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MrM-gP-QQi">
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MrM-gP-QQi">
                                         <rect key="frame" x="16" y="253" width="288" height="40"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <color key="tintColor" systemColor="labelColor"/>
@@ -1135,6 +1133,15 @@
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBE-rf-O6o">
+                                        <rect key="frame" x="267" y="253" width="29" height="40"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="togglePasswordPressed:" destination="hSf-Jq-9bJ" eventType="touchUpInside" id="UIg-1c-aqU"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJC-ks-N5u">
                                         <rect key="frame" x="16" y="309" width="288" height="40"/>
                                         <constraints>
@@ -1157,7 +1164,7 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Have an account? Login!">
-                                            <fontDescription key="titleFontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                            <fontDescription key="titleFontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -1165,25 +1172,19 @@
                                             <action selector="signUpPressed:" destination="RBW-2X-GNl" eventType="touchUpInside" id="qyv-re-i9x"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npV-cc-WKq">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="RhythmoTune" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npV-cc-WKq">
                                         <rect key="frame" x="0.0" y="402" width="320" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="WWc-u8-4q5"/>
                                         </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="RhythmoTune">
-                                                <attributes>
-                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <font key="NSFont" size="17" name="Montserrat-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="BBE-rf-O6o" firstAttribute="top" secondItem="MrM-gP-QQi" secondAttribute="top" id="0Nb-ie-XgD"/>
                                     <constraint firstItem="MrM-gP-QQi" firstAttribute="top" secondItem="ubR-uI-Gv3" secondAttribute="bottom" constant="16" id="0eJ-jS-sUA"/>
                                     <constraint firstItem="KsD-mu-51e" firstAttribute="top" secondItem="DJC-ks-N5u" secondAttribute="bottom" constant="16" id="10A-M7-plj"/>
                                     <constraint firstItem="npV-cc-WKq" firstAttribute="top" secondItem="KsD-mu-51e" secondAttribute="bottom" constant="16" id="1mQ-nE-0Xu"/>
@@ -1192,16 +1193,20 @@
                                     <constraint firstItem="DJC-ks-N5u" firstAttribute="top" secondItem="MrM-gP-QQi" secondAttribute="bottom" constant="16" id="CzC-dK-0D3"/>
                                     <constraint firstAttribute="trailing" secondItem="pa4-cc-zkL" secondAttribute="trailing" constant="40" id="DYd-EU-iM1"/>
                                     <constraint firstAttribute="trailing" secondItem="KsD-mu-51e" secondAttribute="trailing" id="FjC-Fl-wS0"/>
+                                    <constraint firstItem="BBE-rf-O6o" firstAttribute="width" secondItem="MrM-gP-QQi" secondAttribute="width" multiplier="0.1" id="Hxn-yP-7Cf"/>
                                     <constraint firstItem="pa4-cc-zkL" firstAttribute="leading" secondItem="BUA-jI-aAT" secondAttribute="leading" constant="40" id="LrU-BW-yY1"/>
                                     <constraint firstItem="ubR-uI-Gv3" firstAttribute="leading" secondItem="BUA-jI-aAT" secondAttribute="leading" constant="16" id="OBZ-F0-4ZC"/>
                                     <constraint firstAttribute="trailing" secondItem="DJC-ks-N5u" secondAttribute="trailing" constant="16" id="Q8s-58-iME"/>
+                                    <constraint firstItem="BBE-rf-O6o" firstAttribute="trailing" secondItem="MrM-gP-QQi" secondAttribute="trailing" constant="-8" id="RWO-NV-asl"/>
                                     <constraint firstItem="DJC-ks-N5u" firstAttribute="leading" secondItem="BUA-jI-aAT" secondAttribute="leading" constant="16" id="Wf2-tO-3gC"/>
                                     <constraint firstItem="ubR-uI-Gv3" firstAttribute="top" secondItem="pa4-cc-zkL" secondAttribute="bottom" constant="16" id="aPb-iZ-qxo"/>
                                     <constraint firstAttribute="trailing" secondItem="npV-cc-WKq" secondAttribute="trailing" id="eq0-M6-2AR"/>
+                                    <constraint firstItem="BBE-rf-O6o" firstAttribute="height" secondItem="MrM-gP-QQi" secondAttribute="height" id="ik9-wP-OJU"/>
                                     <constraint firstItem="MrM-gP-QQi" firstAttribute="leading" secondItem="BUA-jI-aAT" secondAttribute="leading" constant="16" id="kCa-jQ-tNR"/>
                                     <constraint firstItem="npV-cc-WKq" firstAttribute="leading" secondItem="BUA-jI-aAT" secondAttribute="leading" id="muk-DT-LtF"/>
                                     <constraint firstAttribute="bottom" secondItem="npV-cc-WKq" secondAttribute="bottom" constant="40" id="nkG-kg-Pq3"/>
                                     <constraint firstItem="KsD-mu-51e" firstAttribute="leading" secondItem="BUA-jI-aAT" secondAttribute="leading" id="orj-DK-aRg"/>
+                                    <constraint firstItem="BBE-rf-O6o" firstAttribute="bottom" secondItem="MrM-gP-QQi" secondAttribute="bottom" id="qis-ai-fgX"/>
                                     <constraint firstAttribute="trailing" secondItem="MrM-gP-QQi" secondAttribute="trailing" constant="16" id="xR7-bi-x35"/>
                                 </constraints>
                             </view>
@@ -1243,13 +1248,14 @@
                         <outlet property="bottomView" destination="BUA-jI-aAT" id="d5Y-z9-edX"/>
                         <outlet property="footerText" destination="npV-cc-WKq" id="keE-vf-tdc"/>
                         <outlet property="loginButton" destination="KsD-mu-51e" id="jNp-R5-TWC"/>
+                        <outlet property="passwordToggle" destination="BBE-rf-O6o" id="aun-YL-e6g"/>
                         <outlet property="txtEmailAddress" destination="ubR-uI-Gv3" id="FTU-UZ-h2M"/>
                         <outlet property="txtPassword" destination="MrM-gP-QQi" id="662-ka-aS8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2X-0a-89n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-11" y="730"/>
+            <point key="canvasLocation" x="-11.25" y="729.92957746478874"/>
         </scene>
         <!--Playback View Controller-->
         <scene sceneID="XOC-3j-18l">
@@ -1712,6 +1718,7 @@
         <image name="SignUp.jpg" width="288" height="288"/>
         <image name="Splash.jpg" width="735" height="552"/>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
+        <image name="arrowshape.left.fill" catalog="system" width="128" height="104"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -1720,6 +1727,15 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

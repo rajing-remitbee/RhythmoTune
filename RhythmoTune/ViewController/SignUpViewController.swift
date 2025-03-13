@@ -17,6 +17,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var footerText: UILabel!
+    @IBOutlet weak var passwordToggle: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,9 @@ class SignUpViewController: UIViewController {
         //Delegates
         txtEmailAddress.delegate = self
         txtPassword.delegate = self
+        
+        //Password toggle setup
+        passwordToggle.setImage(UIImage(systemName: "eye.slash"), for: .normal)
         
         //View Setup
         setUpView()
@@ -108,6 +112,15 @@ class SignUpViewController: UIViewController {
         self.navigationController?.setViewControllers([viewController], animated: true) // Set as the only view controller
     }
     
+    @IBAction func togglePasswordPressed(_ sender: UIButton) {
+        txtPassword.isSecureTextEntry.toggle()
+        if txtPassword.isSecureTextEntry {
+            sender.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        } else {
+            sender.setImage(UIImage(systemName: "eye"), for: .normal)
+        }
+    }
+    
     @IBAction func btnLogin(_ sender: UIButton) {
         //Pop Signup screen from stack
         navigationController?.popViewController(animated: true)
@@ -134,7 +147,7 @@ class SignUpViewController: UIViewController {
             return
         }
         
-        //Async Task
+        //Async Task - Register
         Task {
             do {
                 let (userId, _) = try await Appwrite().onRegister(email, password) //Register user
@@ -144,9 +157,9 @@ class SignUpViewController: UIViewController {
                 
                 // Success
                 DispatchQueue.main.async {
-                    self.hideLoadingIndicator()
-                    Snackbar.shared.showSuccessMessage(message: "Registration Successful!", on: self.view)
+                    Snackbar.shared.showSuccessMessage(message: "Registration Successful! Navigating to Home Screen!", on: self.view)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                        self.hideLoadingIndicator()
                         self.navigateToHomeScreen()
                     }
                 }

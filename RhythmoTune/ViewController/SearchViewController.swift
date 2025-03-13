@@ -13,6 +13,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lottieAnimationView: LottieAnimationView!
+    @IBOutlet weak var btnBack: UIButton!
     
     var allSongs: [Song] = []
     var allArtists: [Artist] = []
@@ -141,6 +142,11 @@ class SearchViewController: UIViewController {
             textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attributes)
         }
     }
+    
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true) //Navigate back
+    }
+    
     
     //Handle left edge swipe
     @objc func handleSwipe(_ gesture: UIScreenEdgePanGestureRecognizer) {

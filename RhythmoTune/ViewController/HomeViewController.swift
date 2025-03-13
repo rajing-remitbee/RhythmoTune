@@ -14,12 +14,21 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var txtHead: UILabel!
     @IBOutlet weak var txtSubHead: UILabel!
     
+    @IBOutlet weak var bodyView: UIView!
     @IBOutlet weak var bottomMenu: UIView!
-    @IBOutlet weak var menuOneIndication: UIView!
-    @IBOutlet weak var menuTwoIndication: UIView!
-    @IBOutlet weak var menuThreeIndication: UIView!
-    @IBOutlet weak var menuFourIndication: UIView!
     
+    @IBOutlet weak var menuOne: UIView!
+    @IBOutlet weak var menuOneIndication: UIView!
+    
+    @IBOutlet weak var menuTwo: UIView!
+    @IBOutlet weak var menuTwoIndication: UIView!
+    
+    @IBOutlet weak var menuThree: UIView!
+    @IBOutlet weak var menuThreeIndication: UIView!
+    
+    @IBOutlet weak var menuFour: UIView!
+    @IBOutlet weak var menuFourIndication: UIView!
+
     @IBOutlet weak var songCollectionView: UICollectionView!
     @IBOutlet weak var artistCollectionView: UICollectionView!
     
@@ -27,12 +36,14 @@ class HomeViewController: UIViewController {
     
     var songs: [Song] = []
     var artists: [Artist] = []
+    var currentChildViewController: UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
         setupHeadAndSubhead()
+        setupTapNavigations()
         
         //Artist collection
         artistCollectionView.tag = 1
@@ -83,7 +94,9 @@ class HomeViewController: UIViewController {
                     self.hideLoadingIndicator()
                 }
             } catch {
+                self.hideLoadingIndicator()
                 print("Error fetching songs: \(error.localizedDescription)")
+                Snackbar.shared.showErrorMessage(message: "Fetch songs failed: \(error.localizedDescription)", on: self.view)
             }
         }
         
@@ -99,9 +112,37 @@ class HomeViewController: UIViewController {
                     self.hideLoadingIndicator()
                 }
             } catch {
+                self.hideLoadingIndicator()
                 print("Error fetching artists: \(error.localizedDescription)")
+                Snackbar.shared.showErrorMessage(message: "Fetch artist failed: \(error.localizedDescription)", on: self.view)
             }
         }
+    }
+    
+    //Setup tab navigation
+    private func setupTapNavigations() {
+        
+        let homeTap = UITapGestureRecognizer(target: self, action: #selector(homeTabTapped))
+        menuOne.addGestureRecognizer(homeTap)
+        
+        let exploreTap = UITapGestureRecognizer(target: self, action: #selector(exploreTabTapped))
+        menuTwo.addGestureRecognizer(exploreTap)
+        
+        let playlistTap = UITapGestureRecognizer(target: self, action: #selector(playlistTabTapped))
+        menuThree.addGestureRecognizer(playlistTap)
+        
+        let profileTap = UITapGestureRecognizer(target: self, action: #selector(profileTabTapped))
+        menuFour.addGestureRecognizer(profileTap)
+        
+        updateIndicators(activeTabView: menuOne)
+    }
+    
+    
+    private func updateIndicators(activeTabView: UIView) {
+        menuOneIndication.isHidden = menuOne != activeTabView
+        menuTwoIndication.isHidden = menuTwo != activeTabView
+        menuThreeIndication.isHidden = menuThree != activeTabView
+        menuFourIndication.isHidden = menuFour != activeTabView
     }
     
     //Setup views and components
@@ -226,6 +267,53 @@ class HomeViewController: UIViewController {
             //Set attributes for placeholder
             textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attributes)
         }
+    }
+    
+    func showChildViewController(_ viewController: UIViewController) {
+        if let currentChild = currentChildViewController {
+            currentChild.willMove(toParent: nil)
+            currentChild.view.removeFromSuperview()
+            currentChild.removeFromParent()
+        }
+        
+        addChild(viewController)
+        bodyView.addSubview(viewController.view)
+        viewController.view.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            viewController.view.topAnchor.constraint(equalTo: bodyView.topAnchor),
+            viewController.view.bottomAnchor.constraint(equalTo: bodyView.bottomAnchor),
+            viewController.view.leadingAnchor.constraint(equalTo: bodyView.leadingAnchor),
+            viewController.view.trailingAnchor.constraint(equalTo: bodyView.trailingAnchor)
+        ])
+        
+        viewController.didMove(toParent: self)
+        currentChildViewController = viewController
+    }
+    
+    @objc func homeTabTapped() {
+        if let currentChild = currentChildViewController {
+            currentChild.willMove(toParent: nil)
+            currentChild.view.removeFromSuperview()
+            currentChild.removeFromParent()
+            currentChildViewController = nil
+        }
+        updateIndicators(activeTabView: menuOne)
+    }
+    
+    @objc func exploreTabTapped() {
+        showChildViewController(ExploreViewController())
+        updateIndicators(activeTabView: menuTwo)
+    }
+    
+    @objc func playlistTabTapped() {
+        showChildViewController(PlaylistViewController())
+        updateIndicators(activeTabView: menuThree)
+    }
+    
+    @objc func profileTabTapped() {
+        showChildViewController(ProfileViewController())
+        updateIndicators(activeTabView: menuFour)
     }
 }
 

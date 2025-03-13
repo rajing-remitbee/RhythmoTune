@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var eyeToggleButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,9 @@ class LoginViewController: UIViewController {
         
         //View Setup
         setUpView()
+        
+        //Set eye icon
+        eyeToggleButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
         
         //Keyboard Listener
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -109,6 +113,16 @@ class LoginViewController: UIViewController {
         activityIndicator.stopAnimating() //Stop the animation
     }
     
+    
+    @IBAction func togglePasswordVisibility(_ sender: UIButton) {
+        txtPassword.isSecureTextEntry.toggle() //Toggle password visibiity
+        if txtPassword.isSecureTextEntry {
+            sender.setImage(UIImage(systemName: "eye.slash"), for: .normal) //Set eye-slashed icon
+        } else {
+            sender.setImage(UIImage(systemName: "eye"), for: .normal) //Set eye icon
+        }
+    }
+    
     @IBAction func signUpPressed(_ sender: UIButton) {
         //Navigate to SignUp Screen
         navigateToSignUpScreen()
@@ -135,7 +149,7 @@ class LoginViewController: UIViewController {
             return
         }
         
-        // Async Task
+        // Async Task - Login
         Task {
             do {
                 let (userId, _) = try await Appwrite().onLogin(email, password) // Login user
@@ -145,9 +159,9 @@ class LoginViewController: UIViewController {
                 
                 // Success
                 DispatchQueue.main.async {
-                    self.hideLoadingIndicator()
-                    Snackbar.shared.showSuccessMessage(message: "Login Successful!", on: self.view)
+                    Snackbar.shared.showSuccessMessage(message: "Login Successful! Navigating to Home Screen!", on: self.view)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                        self.hideLoadingIndicator()
                         self.navigateToHomeScreen()
                     }
                 }

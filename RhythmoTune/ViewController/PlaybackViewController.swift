@@ -35,6 +35,8 @@ class PlaybackViewController: UIViewController {
     
     var isRepeatEnabled = false
     var isMuted = false
+    var isUserDraggingSlider = false
+    var seekTimer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +49,13 @@ class PlaybackViewController: UIViewController {
         
         //Slider Properties
         songSlider.minimumTrackTintColor = .white
-        songSlider.maximumTrackTintColor = .systemGray
+        songSlider.maximumTrackTintColor = .black
+        if let originalThumbImage = UIImage(named: "Dot") {
+            let newSize = CGSize(width: 20, height: 20)
+            if let resizedThumbImage = originalThumbImage.resized(to: newSize) {
+                songSlider.setThumbImage(resizedThumbImage, for: .normal)
+            }
+        }
         
         //Bottom View Setup
         bottomView.layer.cornerRadius = 20
@@ -84,6 +92,10 @@ class PlaybackViewController: UIViewController {
         songSlider?.maximumValue = Float(song.duration)
         songSlider?.value = 0
         
+        songSlider.addTarget(self, action: #selector(sliderTouchDown), for: .touchDown)
+        songSlider.addTarget(self, action: #selector(sliderTouchUp), for: [.touchUpInside, .touchUpOutside, .touchCancel])
+        songSlider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
+        
         //Player Periodic Listener
         player.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1), queue: .main) { [weak self] time in
             guard let self = self else { return }
@@ -103,6 +115,24 @@ class PlaybackViewController: UIViewController {
         view.addGestureRecognizer(swipeGesture)
         
         NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem)
+    }
+    
+    // Slider Touch Down
+    @objc func sliderTouchDown() {
+        isUserDraggingSlider = true
+    }
+    
+    // Slider Touch Up
+    @objc func sliderTouchUp() {
+        isUserDraggingSlider = false
+    }
+    
+    // Slider Value Changed (Debounced)
+    @objc func sliderValueChanged() {
+        seekTimer?.invalidate()
+        seekTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { _ in
+            self.seekAudio()
+        }
     }
     
     //Handle Player Reached End
@@ -213,5 +243,16 @@ class PlaybackViewController: UIViewController {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             appDelegate.miniPlayerView.configure(song: song, artistName: artistName, player: player) //Current playing song
         }
+    }
+    
+    // Seek Audio Function
+    private func seekAudio() {
+        let newTime = CMTime(seconds: Double(songSlider.value), preferredTimescale: 1)
+        player.seek(to: newTime)
+        updateMiniPlayer()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem)
     }
 }

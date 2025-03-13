@@ -29,5 +29,7 @@ final class RhythmoTuneUITestsLaunchTests: XCTestCase {
         attachment.name = "Launch Screen"
         attachment.lifetime = .keepAlways
         add(attachment)
+        
+        
     }
 }
