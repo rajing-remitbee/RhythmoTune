@@ -37,6 +37,7 @@ class PlaybackViewController: UIViewController {
     var isMuted = false
     var isUserDraggingSlider = false
     var seekTimer: Timer?
+    var savedTime: CMTime?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,10 +100,12 @@ class PlaybackViewController: UIViewController {
         //Player Periodic Listener
         player.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1), queue: .main) { [weak self] time in
             guard let self = self else { return }
-            let currentTime = CMTimeGetSeconds(time) //Update time
-            self.songSlider.value = Float(currentTime) //Update slider
-            self.updateTimeRemainingLabel(currentTime: Int(currentTime), totalDuration: self.song.duration) //Update remaining time
-            self.updateNowPlayingInfo() //Update Now Playing
+            if !self.isUserDraggingSlider {
+                let currentTime = CMTimeGetSeconds(time) //Update time
+                self.songSlider.value = Float(currentTime) //Update slider
+                self.updateTimeRemainingLabel(currentTime: Int(currentTime), totalDuration: self.song.duration) //Update remaining time
+                self.updateNowPlayingInfo() //Update Now Playing
+            }
         }
         
         player.play() //Start song
@@ -120,19 +123,28 @@ class PlaybackViewController: UIViewController {
     // Slider Touch Down
     @objc func sliderTouchDown() {
         isUserDraggingSlider = true
+        player.rate = 0
     }
     
     // Slider Touch Up
     @objc func sliderTouchUp() {
         isUserDraggingSlider = false
+        if let savedTime = savedTime {
+            player.seek(to: savedTime) { finished in
+                if finished {
+                    self.player.rate = 1
+                }
+            }
+            self.savedTime = nil
+        } else {
+            player.rate = 1
+        }
     }
     
     // Slider Value Changed (Debounced)
     @objc func sliderValueChanged() {
-        seekTimer?.invalidate()
-        seekTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { _ in
-            self.seekAudio()
-        }
+        savedTime = CMTime(seconds: Double(songSlider.value), preferredTimescale: 1)
+        updateTimeRemainingLabel(currentTime: Int(songSlider.value), totalDuration: song.duration)
     }
     
     //Handle Player Reached End
@@ -153,9 +165,6 @@ class PlaybackViewController: UIViewController {
     
     //Slider changed or dragged
     @IBAction func songSliderValueChanged(_ sender: UISlider) {
-        let newTime = CMTime(seconds: Double(sender.value), preferredTimescale: 1)
-        player.seek(to: newTime) //Seek to new time
-        updateMiniPlayer() //Update mini player
     }
     
     //Back pressed

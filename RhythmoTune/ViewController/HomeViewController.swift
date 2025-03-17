@@ -17,15 +17,19 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var bodyView: UIView!
     @IBOutlet weak var bottomMenu: UIView!
     
+    @IBOutlet weak var menuOneImage: UIImageView!
     @IBOutlet weak var menuOne: UIView!
     @IBOutlet weak var menuOneIndication: UIView!
     
+    @IBOutlet weak var menuTwoImage: UIImageView!
     @IBOutlet weak var menuTwo: UIView!
     @IBOutlet weak var menuTwoIndication: UIView!
     
+    @IBOutlet weak var menuThreeImage: UIImageView!
     @IBOutlet weak var menuThree: UIView!
     @IBOutlet weak var menuThreeIndication: UIView!
     
+    @IBOutlet weak var menuFourImage: UIImageView!
     @IBOutlet weak var menuFour: UIView!
     @IBOutlet weak var menuFourIndication: UIView!
 
@@ -33,6 +37,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var artistCollectionView: UICollectionView!
     
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var songs: [Song] = []
     var artists: [Artist] = []
@@ -44,79 +49,10 @@ class HomeViewController: UIViewController {
         setupView()
         setupHeadAndSubhead()
         setupTapNavigations()
-        
-        //Artist collection
-        artistCollectionView.tag = 1
-        artistCollectionView.delegate = self
-        artistCollectionView.dataSource = self
-        
-        //Song collection
-        songCollectionView.tag = 2
-        songCollectionView.delegate = self
-        songCollectionView.dataSource = self
-        
-        //SearchView
-        if let mySearchBar = searchBar {
-            //Font
-            if let placeholderFont = UIFont(name: "Montserrat-Regular", size: 16) {
-                //Change placeholder font
-                changeSearchBarPlaceholderFont(searchBar: mySearchBar, placeholder: "Search Songs and Artists....", font: placeholderFont, color: UIColor.darkGray)
-            } else {
-                print("Font not found")
-            }
-        }
-        
-        //Mini player
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            view.addSubview(appDelegate.miniPlayerView)
-            appDelegate.miniPlayerView.translatesAutoresizingMaskIntoConstraints = false
-            
-            NSLayoutConstraint.activate([
-                appDelegate.miniPlayerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                appDelegate.miniPlayerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                appDelegate.miniPlayerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-                appDelegate.miniPlayerView.heightAnchor.constraint(equalToConstant: 80)
-            ])
-            
-            // Hide miniplayer if not playing
-            appDelegate.miniPlayerView.isHidden = AudioManager.shared.player.currentItem == nil
-        }
-        
-        //Fetch songs
-        Task {
-            do {
-                showLoadingIndicator()
-                let songs = try await Appwrite().fetchSongs()
-                self.songs = songs
-                //Update in UI
-                DispatchQueue.main.async {
-                    self.songCollectionView.reloadData()
-                    self.hideLoadingIndicator()
-                }
-            } catch {
-                self.hideLoadingIndicator()
-                print("Error fetching songs: \(error.localizedDescription)")
-                Snackbar.shared.showErrorMessage(message: "Fetch songs failed: \(error.localizedDescription)", on: self.view)
-            }
-        }
-        
-        //Fetch artists
-        Task {
-            do {
-                showLoadingIndicator()
-                let artists = try await Appwrite().fetchArtists()
-                self.artists = artists
-                //Update in UI
-                DispatchQueue.main.async {
-                    self.artistCollectionView.reloadData()
-                    self.hideLoadingIndicator()
-                }
-            } catch {
-                self.hideLoadingIndicator()
-                print("Error fetching artists: \(error.localizedDescription)")
-                Snackbar.shared.showErrorMessage(message: "Fetch artist failed: \(error.localizedDescription)", on: self.view)
-            }
-        }
+        setupCollectionView()
+        setupSearchBar()
+        setupMiniPlayer()
+        setupData()
     }
     
     //Setup tab navigation
@@ -137,12 +73,139 @@ class HomeViewController: UIViewController {
         updateIndicators(activeTabView: menuOne)
     }
     
+    //Setup miniplayer
+    private func setupMiniPlayer() {
+        //Mini player
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            view.addSubview(appDelegate.miniPlayerView)
+            appDelegate.miniPlayerView.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                appDelegate.miniPlayerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                appDelegate.miniPlayerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                appDelegate.miniPlayerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+                appDelegate.miniPlayerView.heightAnchor.constraint(equalToConstant: 80)
+            ])
+            
+            // Hide miniplayer if not playing
+            appDelegate.miniPlayerView.isHidden = AudioManager.shared.player.currentItem == nil
+        }
+    }
     
+    //Fetch songs
+    private func fetchSongs() async {
+        do {
+            showLoadingIndicator()
+            let songs = try await Appwrite().fetchSongs()
+            self.songs = songs
+            //Update in UI
+            DispatchQueue.main.async {
+                self.songCollectionView.reloadData()
+                self.hideLoadingIndicator()
+            }
+        } catch {
+            self.hideLoadingIndicator()
+            print("Error fetching songs: \(error.localizedDescription)")
+            Snackbar.shared.showErrorMessage(message: "Fetch songs failed: \(error.localizedDescription)", on: self.view)
+        }
+    }
+    
+    //Fetch albums
+    private func fetchAlbums() async {
+        //Fetch artists
+        Task {
+            do {
+                showLoadingIndicator()
+                let artists = try await Appwrite().fetchArtists()
+                self.artists = artists
+                //Update in UI
+                DispatchQueue.main.async {
+                    self.artistCollectionView.reloadData()
+                    self.hideLoadingIndicator()
+                }
+            } catch {
+                self.hideLoadingIndicator()
+                print("Error fetching artists: \(error.localizedDescription)")
+                Snackbar.shared.showErrorMessage(message: "Fetch artist failed: \(error.localizedDescription)", on: self.view)
+            }
+        }
+    }
+    
+    //Hide homescreen component
+    private func hideHomeScreenComponents() {
+        scrollView.isHidden = true
+    }
+    
+    //Show homescreencomponents
+    private func showHomeScreenComponents() {
+        scrollView.isHidden = false
+    }
+    
+    //Setup Data
+    private func setupData() {
+        Task {
+            await fetchSongs()
+            await fetchAlbums()
+        }
+    }
+    
+    //Setup collection view
+    private func setupCollectionView() {
+        //Artist collection
+        artistCollectionView.tag = 1
+        artistCollectionView.delegate = self
+        artistCollectionView.dataSource = self
+        
+        //Song collection
+        songCollectionView.tag = 2
+        songCollectionView.delegate = self
+        songCollectionView.dataSource = self
+    }
+    
+    //Setup searchbar
+    private func setupSearchBar() {
+        //SearchView
+        if let mySearchBar = searchBar {
+            //Font
+            if let placeholderFont = UIFont(name: "Montserrat-Regular", size: 16) {
+                //Change placeholder font
+                changeSearchBarPlaceholderFont(searchBar: mySearchBar, placeholder: "Search Songs and Artists....", font: placeholderFont, color: UIColor.darkGray)
+            } else {
+                print("Font not found")
+            }
+        }
+    }
+    
+    //Update bottommenu indicators
     private func updateIndicators(activeTabView: UIView) {
-        menuOneIndication.isHidden = menuOne != activeTabView
-        menuTwoIndication.isHidden = menuTwo != activeTabView
-        menuThreeIndication.isHidden = menuThree != activeTabView
-        menuFourIndication.isHidden = menuFour != activeTabView
+        if menuOne == activeTabView {
+            menuOneImage.image = UIImage(named: "menuHomeFocus")
+            menuOneIndication.isHidden = false
+        } else {
+            menuOneImage.image = UIImage(named: "menuHomeUnFocus")
+            menuOneIndication.isHidden = true
+        }
+        if menuTwo == activeTabView {
+            menuTwoImage.image = UIImage(named: "menuExploreFocus")
+            menuTwoIndication.isHidden = false
+        } else {
+            menuTwoImage.image = UIImage(named: "menuExploreUnFocus")
+            menuTwoIndication.isHidden = true
+        }
+        if menuThree == activeTabView {
+            menuThreeImage.image = UIImage(named: "menuFavouriteFocus")
+            menuThreeIndication.isHidden = false
+        } else {
+            menuThreeImage.image = UIImage(named: "menuFavouriteUnFocus")
+            menuThreeIndication.isHidden = true
+        }
+        if menuFour == activeTabView {
+            menuFourImage.image = UIImage(named: "menuProfileFocus")
+            menuFourIndication.isHidden = false
+        } else {
+            menuFourImage.image = UIImage(named: "menuProfileUnFocus")
+            menuFourIndication.isHidden = true
+        }
     }
     
     //Setup views and components
@@ -269,51 +332,59 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func showChildViewController(_ viewController: UIViewController) {
-        if let currentChild = currentChildViewController {
-            currentChild.willMove(toParent: nil)
-            currentChild.view.removeFromSuperview()
-            currentChild.removeFromParent()
-        }
-        
-        addChild(viewController)
-        bodyView.addSubview(viewController.view)
-        viewController.view.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            viewController.view.topAnchor.constraint(equalTo: bodyView.topAnchor),
-            viewController.view.bottomAnchor.constraint(equalTo: bodyView.bottomAnchor),
-            viewController.view.leadingAnchor.constraint(equalTo: bodyView.leadingAnchor),
-            viewController.view.trailingAnchor.constraint(equalTo: bodyView.trailingAnchor)
-        ])
-        
-        viewController.didMove(toParent: self)
-        currentChildViewController = viewController
-    }
-    
-    @objc func homeTabTapped() {
+    //Remove current child viewcontroller
+    private func removeCurrentChildViewController() {
         if let currentChild = currentChildViewController {
             currentChild.willMove(toParent: nil)
             currentChild.view.removeFromSuperview()
             currentChild.removeFromParent()
             currentChildViewController = nil
         }
+    }
+    
+    //Show Child View Controller
+    private func showChildViewController(_ viewController: UIViewController) {
+        removeCurrentChildViewController()
+
+        addChild(viewController)
+        // Set the initial frame to match bodyView's bounds
+        // viewController.view.frame = bodyView.bounds
+        bodyView.addSubview(viewController.view)
+        viewController.view.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            viewController.view.topAnchor.constraint(equalTo: bodyView.topAnchor),
+            viewController.view.bottomAnchor.constraint(equalTo: bodyView.bottomAnchor),
+            viewController.view.leadingAnchor.constraint(equalTo: bodyView.leadingAnchor),
+            viewController.view.trailingAnchor.constraint(equalTo: bodyView.trailingAnchor)
+        ])
+
+        viewController.didMove(toParent: self)
+        currentChildViewController = viewController
+    }
+    
+    @objc func homeTabTapped() {
         updateIndicators(activeTabView: menuOne)
+        removeCurrentChildViewController()
+        showHomeScreenComponents()
     }
     
     @objc func exploreTabTapped() {
-        showChildViewController(ExploreViewController())
         updateIndicators(activeTabView: menuTwo)
+        hideHomeScreenComponents()
+        showChildViewController(ExploreViewController())
     }
     
     @objc func playlistTabTapped() {
-        showChildViewController(PlaylistViewController())
         updateIndicators(activeTabView: menuThree)
+        hideHomeScreenComponents()
+        showChildViewController(PlaylistViewController())
     }
     
     @objc func profileTabTapped() {
-        showChildViewController(ProfileViewController())
         updateIndicators(activeTabView: menuFour)
+        hideHomeScreenComponents()
+        showChildViewController(ProfileViewController())
     }
 }
 
