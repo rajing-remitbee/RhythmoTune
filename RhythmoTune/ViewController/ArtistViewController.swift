@@ -18,6 +18,8 @@ class ArtistViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var lottieView: LottieAnimationView!
     @IBOutlet weak var txtPopularSongs: UILabel!
+    @IBOutlet weak var btnFollow: UIButton!
+    @IBOutlet weak var btnPlay: UIButton!
     
     var artist: Artist!
     var artistSongs: [Song] = []
@@ -31,6 +33,7 @@ class ArtistViewController: UIViewController {
         //Style and Hide Activity Indicator
         activityIndicator.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
         activityIndicator.isHidden = true
+        btnPlay.setImage(UIImage(systemName: "play.fill"), for: .normal)
         
         //Load artist image from url
         if let imageUrl = URL(string: artist.imageURL) {
@@ -40,14 +43,11 @@ class ArtistViewController: UIViewController {
         //Artist Name
         menuLabel.text = artist.name
         
-        //Top Menu Setup
-        artistSongView.layer.cornerRadius = 20
-        artistSongView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        artistSongView.clipsToBounds = true
-        
         //Hide table initially
         songsTableView.isHidden = true
         txtPopularSongs.isHidden = true
+        btnFollow.isHidden = true
+        btnPlay.isHidden = true
         
         //Setup lottie
         lottieView.contentMode = .scaleAspectFit
@@ -67,10 +67,14 @@ class ArtistViewController: UIViewController {
                         self.lottieView.isHidden = false
                         self.songsTableView.isHidden = true
                         self.txtPopularSongs.isHidden = true
+                        self.btnFollow.isHidden = true
+                        self.btnPlay.isHidden = true
                     } else {
                         self.lottieView.isHidden = true
                         self.songsTableView.isHidden = false
                         self.txtPopularSongs.isHidden = false
+                        self.btnFollow.isHidden = false
+                        self.btnPlay.isHidden = false
                         self.songsTableView.reloadData()
                     }
                     self.hideLoadingIndicator()

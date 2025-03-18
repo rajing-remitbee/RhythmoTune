@@ -156,6 +156,7 @@ class LoginViewController: UIViewController {
                 
                 //Store user details
                 UserDefaults.standard.set(userId, forKey: "loggedInUserId")
+                UserDefaults.standard.set(email, forKey: "loggedInUserEmail")
                 
                 // Success
                 DispatchQueue.main.async {

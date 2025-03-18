@@ -24,11 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Constraint miniplayer
         miniPlayerView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            miniPlayerView.leadingAnchor.constraint(equalTo: window.leadingAnchor, constant: 16), // Padding on leading
-            miniPlayerView.trailingAnchor.constraint(equalTo: window.trailingAnchor, constant: -16), // Padding on trailing
-            miniPlayerView.bottomAnchor.constraint(equalTo: window.safeAreaLayoutGuide.bottomAnchor, constant: 16), // Padding on bottom
-            miniPlayerView.heightAnchor.constraint(equalToConstant: 80)
-        ])
+                    miniPlayerView.leadingAnchor.constraint(equalTo: window.leadingAnchor, constant: 16), // Padding on leading
+                    miniPlayerView.trailingAnchor.constraint(equalTo: window.trailingAnchor, constant: -16), // Padding on trailing
+                    miniPlayerView.topAnchor.constraint(equalTo: window.safeAreaLayoutGuide.topAnchor, constant: 16), // Padding on top
+                    miniPlayerView.heightAnchor.constraint(equalToConstant: 80)
+                ])
         
         //Observer changes for song
         NotificationCenter.default.addObserver(self, selector: #selector(playerItemChanged), name: .AVPlayerItemDidPlayToEndTime, object: nil)

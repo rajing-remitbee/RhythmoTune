@@ -58,18 +58,23 @@ class HomeViewController: UIViewController {
     //Setup tab navigation
     private func setupTapNavigations() {
         
+        //Home Menu
         let homeTap = UITapGestureRecognizer(target: self, action: #selector(homeTabTapped))
         menuOne.addGestureRecognizer(homeTap)
         
+        //Explore Menu
         let exploreTap = UITapGestureRecognizer(target: self, action: #selector(exploreTabTapped))
         menuTwo.addGestureRecognizer(exploreTap)
         
+        //Playlist Menu
         let playlistTap = UITapGestureRecognizer(target: self, action: #selector(playlistTabTapped))
         menuThree.addGestureRecognizer(playlistTap)
         
+        //Profile Menu
         let profileTap = UITapGestureRecognizer(target: self, action: #selector(profileTabTapped))
         menuFour.addGestureRecognizer(profileTap)
         
+        //Update indicators
         updateIndicators(activeTabView: menuOne)
     }
     
@@ -79,14 +84,12 @@ class HomeViewController: UIViewController {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             view.addSubview(appDelegate.miniPlayerView)
             appDelegate.miniPlayerView.translatesAutoresizingMaskIntoConstraints = false
-            
             NSLayoutConstraint.activate([
                 appDelegate.miniPlayerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                 appDelegate.miniPlayerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                 appDelegate.miniPlayerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
                 appDelegate.miniPlayerView.heightAnchor.constraint(equalToConstant: 80)
             ])
-            
             // Hide miniplayer if not playing
             appDelegate.miniPlayerView.isHidden = AudioManager.shared.player.currentItem == nil
         }
@@ -343,12 +346,12 @@ class HomeViewController: UIViewController {
     }
     
     //Show Child View Controller
-    private func showChildViewController(_ viewController: UIViewController) {
+    private func showChildViewController(_ viewControllerID: String) {
         removeCurrentChildViewController()
-
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: viewControllerID)
         addChild(viewController)
-        // Set the initial frame to match bodyView's bounds
-        // viewController.view.frame = bodyView.bounds
         bodyView.addSubview(viewController.view)
         viewController.view.translatesAutoresizingMaskIntoConstraints = false
 
@@ -372,19 +375,19 @@ class HomeViewController: UIViewController {
     @objc func exploreTabTapped() {
         updateIndicators(activeTabView: menuTwo)
         hideHomeScreenComponents()
-        showChildViewController(ExploreViewController())
+        showChildViewController("ExploreViewController")
     }
     
     @objc func playlistTabTapped() {
         updateIndicators(activeTabView: menuThree)
         hideHomeScreenComponents()
-        showChildViewController(PlaylistViewController())
+        showChildViewController("PlaylistViewController")
     }
     
     @objc func profileTabTapped() {
         updateIndicators(activeTabView: menuFour)
         hideHomeScreenComponents()
-        showChildViewController(ProfileViewController())
+        showChildViewController("ProfileViewController")
     }
 }
 

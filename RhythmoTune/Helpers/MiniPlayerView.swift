@@ -18,11 +18,15 @@ class MiniPlayerView: UIView {
     let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .systemMaterial)) // Blur effect
     let closeButton = UIButton(type: .system)
     
+    //Initial touch point
+    private var initialTouchPoint: CGPoint = .zero
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
         setupConstraints()
         setupGesture()
+        setupPanGesture()
     }
     
     required init?(coder: NSCoder) {
@@ -30,6 +34,13 @@ class MiniPlayerView: UIView {
         setupViews()
         setupConstraints()
         setupGesture()
+        setupPanGesture()
+    }
+    
+    private func setupPanGesture() {
+        //Pan Gesture Setup
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
+        addGestureRecognizer(panGesture)
     }
     
     private func setupViews() {
@@ -116,6 +127,7 @@ class MiniPlayerView: UIView {
     }
     
     private func setupGesture() {
+        //Tap Gesture setup
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(miniPlayerTapped))
         addGestureRecognizer(tapGesture)
     }
@@ -149,6 +161,51 @@ class MiniPlayerView: UIView {
         }
     }
     
+    //Snap To Edge
+    private func snapToEdgeOrCorner() {
+        guard let superview = superview else { return } //Superview
+        
+        let safeArea = superview.safeAreaLayoutGuide.layoutFrame //Safearea
+        let viewWidth = frame.width //Width
+        let viewHeight = frame.height //Height
+        
+        let left = safeArea.minX + viewWidth / 2 //Left edge
+        let right = safeArea.maxX - viewWidth / 2 //Right edge
+        let top = safeArea.minY + viewHeight / 2 //Top edge
+        let bottom = safeArea.maxY - viewHeight / 2 //Bottom edge
+        
+        let centerX = center.x //Center X
+        let centerY = center.y //Center Y
+        
+        var targetPoint = center //Target Point
+        
+        // Determine closest edge or corner
+        if abs(centerX - left) < abs(centerX - right) {
+            // Closer to left
+            if abs(centerY - top) < abs(centerY - bottom) {
+                // Closer to top (top-left corner)
+                targetPoint = CGPoint(x: left, y: top)
+            } else {
+                // Closer to bottom (bottom-left corner)
+                targetPoint = CGPoint(x: left, y: bottom)
+            }
+        } else {
+            // Closer to right
+            if abs(centerY - top) < abs(centerY - bottom) {
+                // Closer to top (top-right corner)
+                targetPoint = CGPoint(x: right, y: top)
+            } else {
+                // Closer to bottom (bottom-right corner)
+                targetPoint = CGPoint(x: right, y: bottom)
+            }
+        }
+        
+        // Animate the snap
+        UIView.animate(withDuration: 0.3) {
+            self.center = targetPoint
+        }
+    }
+    
     //Mini Player tapped listener
     @objc func miniPlayerTapped() {
         if
@@ -162,6 +219,21 @@ class MiniPlayerView: UIView {
             playbackViewController.song = currentSong //Set current song
             playbackViewController.artistName = currentArtist //Set current artist
             navigationController.pushViewController(playbackViewController, animated: true) // Push viewcontroller to stack
+        }
+    }
+    
+    @objc private func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: superview)
+        
+        switch gesture.state {
+        case .began:
+            initialTouchPoint = center
+        case .changed:
+            center = CGPoint(x: initialTouchPoint.x + translation.x, y: initialTouchPoint.y + translation.y)
+        case .ended, .cancelled:
+            snapToEdgeOrCorner()
+        default:
+            break
         }
     }
     

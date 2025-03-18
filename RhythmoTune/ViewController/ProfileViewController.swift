@@ -9,50 +9,69 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var avatarImg: UIImageView!
+    @IBOutlet weak var btnLogout: UIButton!
+    @IBOutlet weak var txtUsername: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let label = UILabel()
-        label.text = "User Profile"
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
+        //Setup view
+        avatarImg.layer.cornerRadius = 60
+        btnLogout.layer.cornerRadius = 16
         
-        let logoutButton = UIButton(type: .system)
-        logoutButton.setTitle("Logout", for: .normal)
-        logoutButton.addTarget(self, action: #selector(logoutTapped), for: .touchUpInside)
-        logoutButton.translatesAutoresizingMaskIntoConstraints = false
+        //Generate username
+        if let userEmail = UserDefaults.standard.string(forKey: "loggedInUserEmail") {
+            if let username = generateUsername(from: userEmail) {
+                txtUsername.text = "@\(username)!"
+            } else {
+                print("Invalid email format.")
+            }
+        }
         
-        view.addSubview(label)
-        view.addSubview(logoutButton) // Add the logoutButton as a subview
-        
-        NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            
-            logoutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoutButton.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 20)
-        ])
     }
     
-    @objc func logoutTapped() {
+    //Logout button pressed
+    @IBAction func btnLogoutTapped(_ sender: UIButton) {
         Task {
             do {
-                try await Appwrite().onLogout()
-                clearLocalStorage()
+                try await Appwrite().onLogout() //Initiate logout
+                clearLocalStorage() //Clear local storage data
                 DispatchQueue.main.async {
-                    Snackbar.shared.showSuccessMessage(message: "Logout Successful!", on: self.view)
+                    Snackbar.shared.showSuccessMessage(message: "Logout Successful!", on: self.view) //Show snackbar
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                        self.navigateToLoginScreen()
+                        self.navigateToLoginScreen() //Navigate to login screen
                     }
                 }
             } catch {
+                clearLocalStorage() //Clear local storage data
                 DispatchQueue.main.async {
-                    Snackbar.shared.showErrorMessage(message: "Logout Failed: \(error.localizedDescription)", on: self.view)
+                    Snackbar.shared.showErrorMessage(message: "Logout Failed: \(error.localizedDescription)", on: self.view) //Show error Snackbar
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        self.navigateToLoginScreen() //Navigate to login screen
+                    }
                 }
             }
         }
     }
     
+    //Generate username
+    func generateUsername(from email: String) -> String? {
+        //Strip username from email
+        guard let atIndex = email.firstIndex(of: "@") else {
+            return nil
+        }
+        let username = String(email[..<atIndex])
+        
+        // Remove non-alphanumeric characters
+        let sanitizedUsername = username.components(separatedBy: CharacterSet.alphanumerics.inverted).joined()
+        if sanitizedUsername.isEmpty {
+            return nil;
+        }
+        return sanitizedUsername
+    }
+    
+    //Navigate to login screen
     func navigateToLoginScreen() {
         DispatchQueue.main.async {
             if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
@@ -65,7 +84,9 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    //Clear local storage
     func clearLocalStorage() {
-        UserDefaults.standard.removeObject(forKey: "loggedInUserId")
+        UserDefaults.standard.removeObject(forKey: "loggedInUserId") //Remove userId
+        UserDefaults.standard.removeObject(forKey: "loggedInUserEmail") //Remove userEmail
     }
 }
