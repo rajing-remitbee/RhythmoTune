@@ -1382,14 +1382,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ADU-e1-7HL">
-                                        <rect key="frame" x="18" y="71" width="237.5" height="31"/>
+                                        <rect key="frame" x="18" y="71" width="234" height="31"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="songSliderValueChanged:" destination="4wF-JC-xVh" eventType="valueChanged" id="EeG-LZ-ujB"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bsh-b1-LIT">
-                                        <rect key="frame" x="273.5" y="79" width="26.5" height="15"/>
+                                        <rect key="frame" x="270" y="78.5" width="30" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="BhE-ke-d8I"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1482,6 +1485,7 @@
                                     <constraint firstItem="ADU-e1-7HL" firstAttribute="leading" secondItem="KxH-3y-Wvt" secondAttribute="leading" constant="20" id="0sk-o8-jdb"/>
                                     <constraint firstAttribute="trailing" secondItem="rCC-Dg-hsH" secondAttribute="trailing" constant="20" id="4Eu-Yx-EQM"/>
                                     <constraint firstItem="2M1-IZ-seU" firstAttribute="top" secondItem="ADU-e1-7HL" secondAttribute="bottom" constant="30" id="4Jh-hC-2rg"/>
+                                    <constraint firstItem="Bsh-b1-LIT" firstAttribute="centerY" secondItem="ADU-e1-7HL" secondAttribute="centerY" id="6JE-1v-Kki"/>
                                     <constraint firstAttribute="trailing" secondItem="Bsh-b1-LIT" secondAttribute="trailing" constant="20" id="7Yd-ST-nYy"/>
                                     <constraint firstItem="Zeh-33-rPI" firstAttribute="centerY" secondItem="2M1-IZ-seU" secondAttribute="centerY" id="ATl-PX-jH6"/>
                                     <constraint firstItem="xdi-2g-h0Y" firstAttribute="centerY" secondItem="Zeh-33-rPI" secondAttribute="centerY" id="GEZ-1k-Ly8"/>
@@ -1500,7 +1504,6 @@
                                     <constraint firstAttribute="bottom" secondItem="OvV-m1-dYS" secondAttribute="bottom" id="ew5-4j-KoB"/>
                                     <constraint firstItem="2M1-IZ-seU" firstAttribute="centerX" secondItem="KxH-3y-Wvt" secondAttribute="centerX" id="hEh-tQ-ii9"/>
                                     <constraint firstAttribute="height" constant="250" id="hkF-WP-GQT"/>
-                                    <constraint firstItem="Bsh-b1-LIT" firstAttribute="top" secondItem="rCC-Dg-hsH" secondAttribute="bottom" constant="8" id="jJ3-6c-PMf"/>
                                     <constraint firstItem="2M1-IZ-seU" firstAttribute="leading" secondItem="Zeh-33-rPI" secondAttribute="trailing" constant="32" id="khh-1C-Odj"/>
                                     <constraint firstItem="WlT-87-D3w" firstAttribute="centerY" secondItem="FAy-6C-UME" secondAttribute="centerY" id="pw0-vn-xxD"/>
                                     <constraint firstItem="JbI-bL-BAO" firstAttribute="centerX" secondItem="2M1-IZ-seU" secondAttribute="centerX" id="qFe-GF-5Wh"/>
