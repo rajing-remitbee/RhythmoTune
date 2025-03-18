@@ -21,14 +21,23 @@ class ArtistViewController: UIViewController {
     @IBOutlet weak var btnFollow: UIButton!
     @IBOutlet weak var btnPlay: UIButton!
     
+    @IBOutlet weak var artistSongHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topBlurViewHeightConstraint: NSLayoutConstraint!
+    
     var artist: Artist!
     var artistSongs: [Song] = []
+    private var initialArtistSongViewHeight: CGFloat = 0
+    private var topBlurViewHeight: CGFloat = 0
+    private var actionBarBottomMargin: CGFloat = 16
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Hide Navigation back button
         navigationItem.hidesBackButton = true
+        
+        initialArtistSongViewHeight = artistSongHeightConstraint.constant
+        topBlurViewHeight = view.bounds.height * topBlurViewHeightConstraint.multiplier
         
         //Style and Hide Activity Indicator
         activityIndicator.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
@@ -39,6 +48,11 @@ class ArtistViewController: UIViewController {
         if let imageUrl = URL(string: artist.imageURL) {
             imgArtist.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "placeholderImage"))
         }
+        
+        //Bottom Menu Setup
+        artistSongView.layer.cornerRadius = 20
+        artistSongView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        artistSongView.clipsToBounds = true
         
         //Artist Name
         menuLabel.text = artist.name
@@ -107,12 +121,16 @@ class ArtistViewController: UIViewController {
     
     //Navigate to Playback Screen
     private func navigateToPlaybackScreen(_ song: Song) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let playbackViewController = storyboard.instantiateViewController(withIdentifier: "PlaybackViewController") as! PlaybackViewController
-        playbackViewController.song = song //Set song
-        playbackViewController.artistName = artist.name
-        self.navigationController?.pushViewController(playbackViewController, animated: true)
-        updateMiniPlayer(song: song) //Update miniplayer
+        if song.filepath == "nil" {
+            Snackbar.shared.showErrorMessage(message: "Sorry!! Song not available", on: self.view)
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let playbackViewController = storyboard.instantiateViewController(withIdentifier: "PlaybackViewController") as! PlaybackViewController
+            playbackViewController.song = song //Set song
+            playbackViewController.artistName = artist.name
+            self.navigationController?.pushViewController(playbackViewController, animated: true)
+            updateMiniPlayer(song: song) //Update miniplayer
+        }
     }
     
     //Update miniplayer
@@ -147,7 +165,7 @@ class ArtistViewController: UIViewController {
     }
 }
 
-extension ArtistViewController: UITableViewDelegate, UITableViewDataSource {
+extension ArtistViewController: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return artistSongs.count
     }
@@ -164,5 +182,25 @@ extension ArtistViewController: UITableViewDelegate, UITableViewDataSource {
         let song = artistSongs[indexPath.row]
         navigateToPlaybackScreen(song)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == songsTableView {
+            let contentOffset = scrollView.contentOffset.y
+            
+            var newHeight = initialArtistSongViewHeight + contentOffset
+            newHeight = max(initialArtistSongViewHeight, newHeight)
+            
+            // Clamp maximum height
+            let maxBottomSheetHeight = view.bounds.height - (topBlurViewHeight + actionBarBottomMargin)
+            newHeight = min(maxBottomSheetHeight, newHeight)
+            
+            artistSongHeightConstraint.constant = newHeight
+            
+            if contentOffset <= 0 {
+                // Reset to initial height when scrolling to the top
+                artistSongHeightConstraint.constant = initialArtistSongViewHeight
+            }
+        }
     }
 }

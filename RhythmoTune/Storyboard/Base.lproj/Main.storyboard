@@ -1608,13 +1608,13 @@
                                 </constraints>
                             </view>
                             <visualEffectView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeu-Gw-wsl">
-                                <rect key="frame" x="0.0" y="284" width="320" height="284"/>
+                                <rect key="frame" x="0.0" y="318" width="320" height="250"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Rsh-hN-Vav">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ho0-Ch-bZU" customClass="LottieAnimationView" customModule="Lottie">
-                                            <rect key="frame" x="16" y="16" width="288" height="268"/>
+                                            <rect key="frame" x="16" y="16" width="288" height="234"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="Empty"/>
@@ -1648,7 +1648,7 @@
                                             </buttonConfiguration>
                                         </button>
                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AsA-0P-whx">
-                                            <rect key="frame" x="16" y="53" width="288" height="231"/>
+                                            <rect key="frame" x="16" y="53" width="288" height="197"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <prototypes>
                                                 <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArtistSongCell" id="xMB-MU-aMx" customClass="ArtistSongViewCell" customModule="RhythmoTune" customModuleProvider="target">
@@ -1718,6 +1718,9 @@
                                         <constraint firstAttribute="bottom" secondItem="AsA-0P-whx" secondAttribute="bottom" id="ybD-QK-lJU"/>
                                     </constraints>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="Bap-ko-w7m"/>
+                                </constraints>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="a21-kA-OFZ">
@@ -1728,16 +1731,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="X1j-wl-IFg" firstAttribute="trailing" secondItem="aeu-Gw-wsl" secondAttribute="trailing" id="2KM-Pa-Jei"/>
-                            <constraint firstItem="aeu-Gw-wsl" firstAttribute="height" secondItem="9IA-5w-4Kx" secondAttribute="height" multiplier="0.5" id="4Pn-Rr-AGw"/>
                             <constraint firstItem="X1j-wl-IFg" firstAttribute="trailing" secondItem="a21-kA-OFZ" secondAttribute="trailing" id="CkB-Xp-Ew4"/>
                             <constraint firstAttribute="bottom" secondItem="b9V-f2-MZK" secondAttribute="bottom" id="JhP-5m-qhT"/>
                             <constraint firstItem="a21-kA-OFZ" firstAttribute="leading" secondItem="X1j-wl-IFg" secondAttribute="leading" id="L8M-gH-0kb"/>
                             <constraint firstItem="X1j-wl-IFg" firstAttribute="trailing" secondItem="b9V-f2-MZK" secondAttribute="trailing" id="MLC-xJ-FNS"/>
+                            <constraint firstItem="0cl-nu-Ovv" firstAttribute="height" secondItem="9IA-5w-4Kx" secondAttribute="height" multiplier="0.15" id="NWX-wU-Z2F"/>
                             <constraint firstItem="0cl-nu-Ovv" firstAttribute="top" secondItem="9IA-5w-4Kx" secondAttribute="top" id="OOo-vb-an6"/>
                             <constraint firstItem="b9V-f2-MZK" firstAttribute="top" secondItem="9IA-5w-4Kx" secondAttribute="top" id="Qu4-Ky-awk"/>
                             <constraint firstItem="0cl-nu-Ovv" firstAttribute="trailing" secondItem="X1j-wl-IFg" secondAttribute="trailing" id="Sea-A8-462"/>
                             <constraint firstItem="aeu-Gw-wsl" firstAttribute="leading" secondItem="X1j-wl-IFg" secondAttribute="leading" id="VtE-cz-937"/>
-                            <constraint firstItem="0cl-nu-Ovv" firstAttribute="height" secondItem="9IA-5w-4Kx" secondAttribute="height" multiplier="0.15" id="bcp-Xv-OZ2"/>
                             <constraint firstItem="b9V-f2-MZK" firstAttribute="leading" secondItem="X1j-wl-IFg" secondAttribute="leading" id="k4m-Af-ya5"/>
                             <constraint firstAttribute="bottom" secondItem="a21-kA-OFZ" secondAttribute="bottom" id="lAs-hr-JlD"/>
                             <constraint firstAttribute="bottom" secondItem="aeu-Gw-wsl" secondAttribute="bottom" id="q0Z-VY-A0H"/>
@@ -1747,6 +1749,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="a21-kA-OFZ" id="81V-jM-krh"/>
+                        <outlet property="artistSongHeightConstraint" destination="Bap-ko-w7m" id="Tsa-I6-3Cj"/>
                         <outlet property="artistSongView" destination="aeu-Gw-wsl" id="EV2-2i-sQY"/>
                         <outlet property="btnFollow" destination="Uui-gg-HZA" id="jt0-r5-I3I"/>
                         <outlet property="btnPlay" destination="Evb-Il-d2b" id="lmL-fu-hog"/>
@@ -1754,6 +1757,7 @@
                         <outlet property="lottieView" destination="Ho0-Ch-bZU" id="Qgb-6K-yYX"/>
                         <outlet property="menuLabel" destination="6kC-bl-Yi9" id="H3j-z6-Gwd"/>
                         <outlet property="songsTableView" destination="AsA-0P-whx" id="ujU-bx-ug6"/>
+                        <outlet property="topBlurViewHeightConstraint" destination="NWX-wU-Z2F" id="XuF-VJ-opq"/>
                         <outlet property="txtPopularSongs" destination="tHG-Ol-JQe" id="pVB-sB-zyU"/>
                     </connections>
                 </viewController>

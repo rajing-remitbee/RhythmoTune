@@ -15,6 +15,7 @@ class SongTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
     }
     
     func configure(with song: Song) {

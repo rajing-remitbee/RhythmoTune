@@ -14,6 +14,7 @@ class ArtistTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
     }
     
     func configure(with artist: Artist) {

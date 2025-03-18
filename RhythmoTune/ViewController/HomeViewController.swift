@@ -275,18 +275,22 @@ class HomeViewController: UIViewController {
     
     //Navigate to Playback Screen
     private func navigateToPlaybackScreen(_ song: Song) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let playbackViewController = storyboard.instantiateViewController(withIdentifier: "PlaybackViewController") as! PlaybackViewController
-        playbackViewController.song = song //Set song
-        //Find artist using artist id
-        for artist in artists {
-            if artist.artistID == song.artist {
-                playbackViewController.artistName = artist.name
-                break
+        if song.filepath == "nil" {
+            Snackbar.shared.showErrorMessage(message: "Sorry!! Song not available", on: self.view)
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let playbackViewController = storyboard.instantiateViewController(withIdentifier: "PlaybackViewController") as! PlaybackViewController
+            playbackViewController.song = song //Set song
+            //Find artist using artist id
+            for artist in artists {
+                if artist.artistID == song.artist {
+                    playbackViewController.artistName = artist.name
+                    break
+                }
             }
+            self.navigationController?.pushViewController(playbackViewController, animated: true)
+            updateMiniPlayer(song: song) //Update miniplayer
         }
-        self.navigationController?.pushViewController(playbackViewController, animated: true)
-        updateMiniPlayer(song: song) //Update miniplayer
     }
     
     //Navigate to Artist Screen
