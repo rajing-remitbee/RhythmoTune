@@ -51,7 +51,11 @@ class HomeViewController: UIViewController {
         setupTapNavigations()
         setupCollectionView()
         setupSearchBar()
-        setupMiniPlayer()
+        
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.miniPlayerView.setup(in: view)
+        }
+        
         setupData()
     }
     
@@ -76,23 +80,6 @@ class HomeViewController: UIViewController {
         
         //Update indicators
         updateIndicators(activeTabView: menuOne)
-    }
-    
-    //Setup miniplayer
-    private func setupMiniPlayer() {
-        //Mini player
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            view.addSubview(appDelegate.miniPlayerView)
-            appDelegate.miniPlayerView.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                appDelegate.miniPlayerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                appDelegate.miniPlayerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                appDelegate.miniPlayerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-                appDelegate.miniPlayerView.heightAnchor.constraint(equalToConstant: 80)
-            ])
-            // Hide miniplayer if not playing
-            appDelegate.miniPlayerView.isHidden = AudioManager.shared.player.currentItem == nil
-        }
     }
     
     //Fetch songs
@@ -223,6 +210,7 @@ class HomeViewController: UIViewController {
         
         //SongCollection View
         songCollectionView.layer.cornerRadius = 24
+        artistCollectionView.layer.cornerRadius = 24
         
         //Bottom Menu Setup
         menuOneIndication.layer.cornerRadius = 4
@@ -386,6 +374,7 @@ class HomeViewController: UIViewController {
         updateIndicators(activeTabView: menuThree)
         hideHomeScreenComponents()
         showChildViewController("PlaylistViewController")
+
     }
     
     @objc func profileTabTapped() {

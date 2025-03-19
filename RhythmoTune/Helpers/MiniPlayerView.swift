@@ -16,10 +16,17 @@ class MiniPlayerView: UIView {
     let artistLabel = UILabel() //Artist
     let playPauseButton = UIButton() //Play and Pause Button
     let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .systemMaterial)) // Blur effect
-    let closeButton = UIButton(type: .system)
+    let closeButton = UIButton(type: .system) //Close Button
     
     //Initial touch point
     private var initialTouchPoint: CGPoint = .zero
+    private var targetPoint: CGPoint? = nil //Target Point
+    private var storedCenter: CGPoint? // Store the center
+    
+    //StoredCenter Getter
+    var currentStoredCenter: CGPoint? {
+        return storedCenter
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,17 +44,49 @@ class MiniPlayerView: UIView {
         setupPanGesture()
     }
     
+    //Setup Miniplayer
+    func setup(in view: UIView) {
+        view.addSubview(self)
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        if let storedCenter = storedCenter, storedCenter.y < view.safeAreaLayoutGuide.layoutFrame.midY {
+            // Stored center is at the top
+            NSLayoutConstraint.activate([
+                leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+                heightAnchor.constraint(equalToConstant: 80)
+            ])
+            self.center = storedCenter
+        } else {
+            // Stored center is at the bottom or nil
+            NSLayoutConstraint.activate([
+                leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60),
+                heightAnchor.constraint(equalToConstant: 80)
+            ])
+            if let storedCenter = storedCenter {
+                self.center = storedCenter;
+            }
+        }
+        
+        isHidden = AudioManager.shared.player.currentItem == nil
+    }
+    
+    //Setup Pan Gesture
     private func setupPanGesture() {
         //Pan Gesture Setup
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
-        addGestureRecognizer(panGesture)
+        addGestureRecognizer(panGesture) //Add Pan Gesture
     }
     
+    //Setup Views
     private func setupViews() {
         backgroundColor = .clear //Clear Background Color
         
         // Blur effect view
-        blurEffectView.layer.cornerRadius = 12 // Rounded corners for blur
+        blurEffectView.layer.cornerRadius = 12
         blurEffectView.clipsToBounds = true
         addSubview(blurEffectView)
         
@@ -132,10 +171,11 @@ class MiniPlayerView: UIView {
         addGestureRecognizer(tapGesture)
     }
     
+    //Close Button Tapped
     @objc func closeButtonTapped(_ sender: Any) {
-        AudioManager.shared.player.pause()
-        AudioManager.shared.player.replaceCurrentItem(with: nil)
-        self.isHidden = true
+        AudioManager.shared.player.pause() //Pause the song
+        AudioManager.shared.player.replaceCurrentItem(with: nil) //Replace song with nil
+        self.isHidden = true //Hide the view
     }
     
     //Configure Mini Player
@@ -172,12 +212,12 @@ class MiniPlayerView: UIView {
         let left = safeArea.minX + viewWidth / 2 //Left edge
         let right = safeArea.maxX - viewWidth / 2 //Right edge
         let top = safeArea.minY + viewHeight / 2 //Top edge
-        let bottom = safeArea.maxY - viewHeight / 2 //Bottom edge
+        let bottom = (safeArea.maxY - 60) - viewHeight / 2 //Bottom edge
         
         let centerX = center.x //Center X
         let centerY = center.y //Center Y
         
-        var targetPoint = center //Target Point
+        targetPoint = center //Target Point
         
         // Determine closest edge or corner
         if abs(centerX - left) < abs(centerX - right) {
@@ -202,7 +242,8 @@ class MiniPlayerView: UIView {
         
         // Animate the snap
         UIView.animate(withDuration: 0.3) {
-            self.center = targetPoint
+            self.center = self.targetPoint!
+            self.storedCenter = self.targetPoint! // Save the center
         }
     }
     
@@ -222,16 +263,17 @@ class MiniPlayerView: UIView {
         }
     }
     
+    //Pan Gesture Handler
     @objc private func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
-        let translation = gesture.translation(in: superview)
+        let translation = gesture.translation(in: superview) //Translation
         
         switch gesture.state {
         case .began:
-            initialTouchPoint = center
+            initialTouchPoint = center //Initial Point
         case .changed:
-            center = CGPoint(x: initialTouchPoint.x + translation.x, y: initialTouchPoint.y + translation.y)
+            center = CGPoint(x: initialTouchPoint.x + translation.x, y: initialTouchPoint.y + translation.y) //Pan Gesture Changed
         case .ended, .cancelled:
-            snapToEdgeOrCorner()
+            snapToEdgeOrCorner() //End point
         default:
             break
         }
@@ -247,4 +289,10 @@ class MiniPlayerView: UIView {
         updatePlayPauseButton(player: AudioManager.shared.player)
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if let storedCenter = storedCenter, superview != nil {
+            center = storedCenter // Restore the stored center
+        }
+    }
 }

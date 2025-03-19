@@ -223,7 +223,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore songs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQc-LL-Rku">
-                                <rect key="frame" x="86.5" y="271.5" width="147.5" height="25"/>
+                                <rect key="frame" x="86.5" y="272" width="147.5" height="24.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -454,6 +454,14 @@
                                                                                 <constraint firstAttribute="height" constant="150" id="WdK-et-0nd"/>
                                                                             </constraints>
                                                                         </imageView>
+                                                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p14-du-i1f">
+                                                                            <rect key="frame" x="0.0" y="112.5" width="150" height="37.5"/>
+                                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Kcf-CJ-VXU">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="38"/>
+                                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                            </view>
+                                                                            <blurEffect style="regular"/>
+                                                                        </visualEffectView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channa Mereya" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4d-Ls-udO">
                                                                             <rect key="frame" x="16" y="121" width="126" height="13"/>
                                                                             <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="11"/>
@@ -467,12 +475,17 @@
                                                                         <constraint firstAttribute="bottom" secondItem="WV7-Lj-cgR" secondAttribute="bottom" id="4cs-H4-a3I"/>
                                                                         <constraint firstAttribute="bottom" secondItem="d4d-Ls-udO" secondAttribute="bottom" constant="16" id="DS1-9x-3iQ"/>
                                                                         <constraint firstItem="d4d-Ls-udO" firstAttribute="leading" secondItem="JRT-vh-bu2" secondAttribute="leading" constant="16" id="YV4-9Z-qwe"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="p14-du-i1f" secondAttribute="trailing" id="a4l-tx-f2Y"/>
                                                                         <constraint firstAttribute="trailing" secondItem="d4d-Ls-udO" secondAttribute="trailing" constant="8" id="hVd-qT-fPg"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="p14-du-i1f" secondAttribute="bottom" id="js5-9l-Afr"/>
                                                                         <constraint firstItem="WV7-Lj-cgR" firstAttribute="leading" secondItem="JRT-vh-bu2" secondAttribute="leading" id="sM4-qd-SOF"/>
+                                                                        <constraint firstItem="p14-du-i1f" firstAttribute="height" secondItem="WV7-Lj-cgR" secondAttribute="height" multiplier="0.25" id="tDX-rY-gzH"/>
+                                                                        <constraint firstItem="p14-du-i1f" firstAttribute="leading" secondItem="JRT-vh-bu2" secondAttribute="leading" id="xZO-ZF-Zr0"/>
                                                                     </constraints>
                                                                 </collectionViewCellContentView>
                                                                 <size key="customSize" width="150" height="150"/>
                                                                 <connections>
+                                                                    <outlet property="blurView" destination="p14-du-i1f" id="LzI-CR-5Zi"/>
                                                                     <outlet property="imageView" destination="WV7-Lj-cgR" id="rXO-6H-iDT"/>
                                                                     <outlet property="songTitle" destination="d4d-Ls-udO" id="JCW-Zi-KBt"/>
                                                                 </connections>
@@ -512,6 +525,14 @@
                                                                                 <constraint firstAttribute="width" constant="150" id="Adj-cb-bov"/>
                                                                             </constraints>
                                                                         </imageView>
+                                                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCJ-U6-G4r">
+                                                                            <rect key="frame" x="0.0" y="112.5" width="150" height="37.5"/>
+                                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="W18-9o-5PY">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="38"/>
+                                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                            </view>
+                                                                            <blurEffect style="regular"/>
+                                                                        </visualEffectView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channa Mereya" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebm-mR-8g2">
                                                                             <rect key="frame" x="16" y="121" width="126" height="13"/>
                                                                             <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="11"/>
@@ -520,18 +541,23 @@
                                                                         </label>
                                                                     </subviews>
                                                                     <constraints>
+                                                                        <constraint firstItem="bCJ-U6-G4r" firstAttribute="height" secondItem="PI0-46-3K7" secondAttribute="height" multiplier="0.25" id="0Kg-R9-JSZ"/>
                                                                         <constraint firstAttribute="bottom" secondItem="PI0-46-3K7" secondAttribute="bottom" id="3oG-0m-YTv"/>
+                                                                        <constraint firstItem="bCJ-U6-G4r" firstAttribute="leading" secondItem="uFX-4h-8fY" secondAttribute="leading" id="6aH-3w-Vzw"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="bCJ-U6-G4r" secondAttribute="trailing" id="Ha6-3h-xYg"/>
                                                                         <constraint firstAttribute="trailing" secondItem="ebm-mR-8g2" secondAttribute="trailing" constant="8" id="IbA-JH-xH8"/>
                                                                         <constraint firstAttribute="trailing" secondItem="PI0-46-3K7" secondAttribute="trailing" id="Kyn-Mc-WRV"/>
                                                                         <constraint firstAttribute="bottom" secondItem="ebm-mR-8g2" secondAttribute="bottom" constant="16" id="Mt7-lQ-RVz"/>
                                                                         <constraint firstItem="ebm-mR-8g2" firstAttribute="leading" secondItem="uFX-4h-8fY" secondAttribute="leading" constant="16" id="ODN-Xp-ulF"/>
                                                                         <constraint firstItem="PI0-46-3K7" firstAttribute="leading" secondItem="uFX-4h-8fY" secondAttribute="leading" id="maj-3B-9c3"/>
                                                                         <constraint firstItem="PI0-46-3K7" firstAttribute="top" secondItem="uFX-4h-8fY" secondAttribute="top" id="nEa-eI-1GI"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="bCJ-U6-G4r" secondAttribute="bottom" id="wri-5q-KmO"/>
                                                                     </constraints>
                                                                 </collectionViewCellContentView>
                                                                 <size key="customSize" width="150" height="150"/>
                                                                 <connections>
                                                                     <outlet property="artistLabel" destination="ebm-mR-8g2" id="TuZ-9I-902"/>
+                                                                    <outlet property="blurView" destination="bCJ-U6-G4r" id="34N-zD-FbH"/>
                                                                     <outlet property="imageView" destination="PI0-46-3K7" id="Vby-OC-ebo"/>
                                                                 </connections>
                                                             </collectionViewCell>
@@ -760,7 +786,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="915" y="-34"/>
+            <point key="canvasLocation" x="915" y="-34.859154929577464"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="Kwt-5Y-17c">

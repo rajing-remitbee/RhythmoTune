@@ -16,19 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var playerRateObservation: NSKeyValueObservation? //Observation Rate
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        guard let window = window else { return true }
-        
-        //Add miniplayer to window
-        window.addSubview(miniPlayerView)
-        
-        //Constraint miniplayer
-        miniPlayerView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-                    miniPlayerView.leadingAnchor.constraint(equalTo: window.leadingAnchor, constant: 16), // Padding on leading
-                    miniPlayerView.trailingAnchor.constraint(equalTo: window.trailingAnchor, constant: -16), // Padding on trailing
-                    miniPlayerView.topAnchor.constraint(equalTo: window.safeAreaLayoutGuide.topAnchor, constant: 16), // Padding on top
-                    miniPlayerView.heightAnchor.constraint(equalToConstant: 80)
-                ])
         
         //Observer changes for song
         NotificationCenter.default.addObserver(self, selector: #selector(playerItemChanged), name: .AVPlayerItemDidPlayToEndTime, object: nil)
